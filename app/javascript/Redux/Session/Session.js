@@ -1,9 +1,9 @@
 const LOGIN_USER = 'CARS/SESSION/LOGIN_USER';
 
 const savedSession = JSON.parse(sessionStorage.getItem('CarBooking'));
-let initialState = { token: "", session: false, level: 0 };
+let initialState = { token: '', session: false, level: 0 };
 if (savedSession) {
-  initialState= { token: savedSession.token, session: true, level: savedSession.level};
+  initialState = { token: savedSession.token, session: true, level: savedSession.level };
 }
 
 export const newSession = (payload) => ({
@@ -25,18 +25,18 @@ export const fetchCreateUser = (username) => async (dispatch) => {
 };
 
 const saveSessionLocally = (data) => {
-  sessionStorage.setItem('CarBooking', JSON.stringify({totken: data.token, level: data.level}));
+  sessionStorage.setItem('CarBooking', JSON.stringify({ totken: data.token, level: data.level }));
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER:
       saveSessionLocally(action.payload);
-      return { 
+      return {
         token: action.payload.token,
         session: true,
         level: action.payload.level,
-       };
+      };
     default:
       return state;
   }

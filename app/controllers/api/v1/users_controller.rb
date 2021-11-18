@@ -6,13 +6,13 @@ class Api::V1::UsersController < ApplicationController
       @user = User.new(username: body_params[:username])
       if @user.save
         token = AuthenticateUser.new(body_params[:username]).call
-        token["message"] = "User Created Succesfuly!"
+        token['message'] = 'User Created Succesfuly!'
         render json: token
       else
-        render json: "User is already in use"
+        render json: 'User is already in use'
       end
     else
-      render json: "User information not sent!"
+      render json: 'User information not sent!'
     end
   end
 
