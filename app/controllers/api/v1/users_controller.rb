@@ -16,6 +16,21 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def login
+    if body_params[:username]
+      @user = User.find_by(username: body_params[:username])
+      if @user
+        token = AuthenticateUser.new(body_params[:username]).call
+        token['message'] = 'Logged in Succesfuly!'
+        render json: token
+      else
+        render json: 'Invalid username'
+      end
+    else
+      render json: 'User information not sent!'
+    end
+  end
+
   private
 
   def body_params
