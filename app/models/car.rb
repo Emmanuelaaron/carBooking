@@ -1,4 +1,5 @@
 class Car < ApplicationRecord
+  include ImageUploader::Attachment(:image)
   has_many :reservations, class_name: 'Reservation', foreign_key: 'user_id'
   validates :name, presence: true, uniqueness: true
   validates :model, presence: true
