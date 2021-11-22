@@ -24,6 +24,19 @@ export const fetchCreateUser = (username) => async (dispatch) => {
   dispatch(newSession(data));
 };
 
+export const loginUser = (username) => async (dispatch) => {
+  const res = await fetch('http://127.0.0.1:3000/api/v1/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username,
+    }),
+    redirect: 'follow',
+  });
+  const data = await res.json();
+  dispatch(newSession(data));
+};
+
 const saveSessionLocally = (data) => {
   sessionStorage.setItem('CarBooking', JSON.stringify({ totken: data.token, level: data.level }));
 };
