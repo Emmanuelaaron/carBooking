@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {Form, Button, Container} from 'react-bootstrap';
 import { fetchCreateUser } from '../Redux/Session/Session';
 
 const SignUp = () => {
@@ -17,11 +18,18 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1>Create new User:</h1>
-      <input placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
-      <button type="button" onClick={createUserBtnHandler}>Create User</button>
-    </div>
+    <Container>
+      <Form className="border">
+        <Form.Group className="mb-3" controlId="">
+          <Form.Label>Create User</Form.Label>
+          <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
+        </Form.Group>
+
+        <Button variant="primary" type="button" onClick={createUserBtnHandler}>
+          Create User
+        </Button>
+      </Form>
+    </ Container>
   );
 };
 
