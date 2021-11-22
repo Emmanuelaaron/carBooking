@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Form, Button, Container} from 'react-bootstrap';
+import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import { fetchCreateUser } from '../Redux/Session/Session';
+import logo from '../Img/logo.jpg';
 
 const SignUp = () => {
   const [userInp, setUserInp] = useState('');
@@ -19,16 +20,23 @@ const SignUp = () => {
 
   return (
     <Container>
-      <Form className="border">
-        <Form.Group className="mb-3" controlId="">
-          <Form.Label>Create User</Form.Label>
-          <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
-        </Form.Group>
+      <Row className="m-0">
+        <Col md="6 p-3">
+          <img src={logo} className="w-100" />
+        </Col>
+        <Col md="6">
+          <Form className="p-3">
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label className="fs-1">Sign Up User:</Form.Label>
+              <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
+            </Form.Group>
 
-        <Button variant="primary" type="button" onClick={createUserBtnHandler}>
-          Create User
-        </Button>
-      </Form>
+            <Button variant="primary" type="button" onClick={createUserBtnHandler}>
+              Sign Up
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </ Container>
   );
 };

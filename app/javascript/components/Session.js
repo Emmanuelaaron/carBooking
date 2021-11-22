@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
+import { Container } from 'react-bootstrap';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -13,16 +14,22 @@ const Session = () => {
   };
 
   let ans = (
-    <>
-      {
-        logNsign
-          ? <Login />
-          : <SignUp />
-      }
-      <button type="button" onClick={buttonActionHandle}>
-        { logNsign ? 'Sign Up' : 'Log In' }
-      </button>
-    </>
+    <div className="bg-session m-0 position-relative">
+      <div className="position-absolute top-50 start-50 translate-middle p-3 session-container">
+        <div
+          className="p-2 bg-dark-transparent text-white rounded-3 d-flex flex-column align-items-center"
+        >
+          {
+            logNsign
+              ? <Login />
+              : <SignUp />
+          }
+          <button className="link-info bg-transparent border-0" type="button" onClick={buttonActionHandle}>
+            { logNsign ? 'Sign Up' : 'Log In' }
+          </button>
+        </div>
+      </div>
+    </div>
   );
 
   if (currentSession.session) {
