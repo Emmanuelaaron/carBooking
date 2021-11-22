@@ -1,7 +1,7 @@
 .bg-session {
   background: linear-gradient(#415209d5 0%, #415209d5 100%), url(./Img/bglogin.jpg) no-repeat center;
   background-attachment: fixed;
-  background-size:cover;
+  background-size: cover;
   height: 100vh;
 }
 
