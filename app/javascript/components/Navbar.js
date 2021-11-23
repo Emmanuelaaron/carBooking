@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import LogOut from './LogOut';
 import menuIcon from '../Img/menu.png';
 import facebookImg from '../Img/facebook.png';
 import twitterImg from '../Img/twitter.png';
@@ -10,6 +11,7 @@ import vimeoImg from '../Img/vimeo.png';
 
 const Navbar = () => {
   const [menuStatus, setMenuStatus] = useState('d-none');
+
   const menuLinks = [
     {
       id: 1,
@@ -84,12 +86,7 @@ const Navbar = () => {
                 :
                 (
                   <li className="my-2 nav-item log-out py-2" key={link.id}>
-                    <button
-                      type="button"
-                      className="fs-4 px-4 border-0 bg-transparent"
-                    >
-                      {link.text.toUpperCase()}
-                    </button>
+                    <LogOut text={link.text.toUpperCase()} />
                   </li>
                 ) 
             ))
