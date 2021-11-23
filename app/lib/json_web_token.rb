@@ -7,6 +7,6 @@ class JsonWebToken
   end
 
   def self.decode(token)
-    body ||= JWT.decode(token, HMAC_SECRET)[0]
+    JWT.decode(token, HMAC_SECRET)[0]
   end
 end
