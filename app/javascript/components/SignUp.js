@@ -21,7 +21,7 @@ const SignUp = () => {
   return (
     <Container>
       <Row className="m-0">
-        <Col md="6 p-3">
+        <Col md="6" className="p-3">
           <img src={logo} className="w-100" />
         </Col>
         <Col md="6">
