@@ -2,16 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Car = (props) => {
-  const { name, description, model, year, price } = props;
+  const { name, description, model, price } = props.car;
   
   return (
-    <React.Fragment>
+    <p>
       {name}
-    </React.Fragment>
+    </p>
   );
 }
 
 Car.propTypes = {
-  car: PropTypes.array
+  car: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
 };
 export default Car;

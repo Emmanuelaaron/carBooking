@@ -43,8 +43,11 @@ export const loginUser = (username) => async (dispatch) => {
       username,
     }),
     redirect: 'follow',
-  }).then((response) => response.json())
+  }).then((response) => {
+    return response.json();
+  })
   .then((data) => {
+    console.log(data);
     if (data.code === 1){
       dispatch(newSession(data));
     }

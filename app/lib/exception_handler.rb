@@ -1,5 +1,5 @@
-module ExceptionHandler
-  extend ActiveSupport::Concern
+module ExceptionHandler extend ActiveSupport::Concern
+
   class AuthenticationError < StandardError; end
 
   class MissingToken < StandardError; end
@@ -24,6 +24,6 @@ module ExceptionHandler
   end
 
   def unauthorized_request(event)
-    render json: event.message, status: :unauthorized
+    render json: { message: event.message, status: :unauthorized }
   end
 end
