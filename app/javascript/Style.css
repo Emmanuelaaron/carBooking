@@ -5,6 +5,13 @@
   src: url('./Fonts/PassionOne-Regular.ttf');
 }
 
+.session-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  width: 100%;
+}
+
 .title {
   font-family: 'Praise', Arial, Helvetica, sans-serif;
   transform: rotate(-25deg);
@@ -21,15 +28,10 @@
   background-color: rgba(0, 0, 0, 0.637);
 }
 
-.session-container {
-  max-width: 800px;
-  width: 100%;
-}
-
 .navbar {
   height: 100vh;
-  max-width: 27%;
-  max-width: 100%;
+  max-width: 20%;
+  width: 100%;
   font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-right: 1px solid #97bf11;
 }
@@ -71,12 +73,56 @@
   margin: 10px 0 10px 0;
 }
 
+.home {
+  max-width: 80%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.home-left {
+  background-color: #97bf11;
+  border: 0;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 0 35px 35px 0;
+  padding: 20px 0 22px 30px;
+  margin-right: 20px;
+}
+
+.home-rigth {
+  background-color: #97bf11;
+  border: 0;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 35px 0 0 35px;
+  padding: 20px 30px 22px 0;
+  margin-left: 20px;
+}
+
+.arrowicon {
+  width: 25px;
+  height: 15px;
+}
+
+.arrowicon-inverse {
+  width: 25px;
+  height: 15px;
+  transform: rotate(-180deg);
+}
+
 @media (max-width: 768px) {
   .navbar {
+    max-width: 100%;
     width: 100%;
     max-height: 70px;
     background-color: #97bf11;
     border: 0;
+  }
+
+  .session-container {
+    display: flex;
+    flex-direction: column;
   }
 
   .link-container {
@@ -100,5 +146,18 @@
   .title {
     transform: rotate(-25deg);
     color: #fff;
+  }
+
+  .home {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .home-left {
+    display: none;
+  }
+  
+  .home-rigth {
+    display: none;
   }
 }

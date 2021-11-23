@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import Navbar from './Navbar';
+import HomePage from './HomePage';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -35,10 +36,10 @@ const Session = () => {
   if (currentSession.session) {
     ans = (
       <Router>
-        <div className="d-flex flex-column d-md-flex flex-md-row">
+        <div className="session-container">
         <Navbar/>
         <Routes >
-          <Route exact path="/" element={<p>Home Page!!</p>} />
+          <Route exact path="/" element={<HomePage />} />
           <Route exact path="/newreservation" element={<p>New Reservations!!</p>} />
           <Route exact path="/reservations" element={<p>Reservations!!</p>} />
           <Route exact path="/newcar" element={<p>New Car!!</p>} />
