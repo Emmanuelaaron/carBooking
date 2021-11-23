@@ -13,7 +13,7 @@ class Api::V1::UsersController < ApplicationController
         render json: { message: 'User is already in use', code: 409 }
       end
     else
-      render json: { message: 'User information not sent!', code: 204}
+      render json: { message: 'User information not sent!', code: 204 }
     end
   end
 
@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
         render json: { message: 'Invalid username', code: 2001 }
       end
     else
-      render json: { message:'User information not sent!', code: 204 }
+      render json: { message: 'User information not sent!', code: 204 }
     end
   end
 
