@@ -3,6 +3,6 @@ class Api::V1::CarsController < ApplicationController
 
   def index
     @cars = Car.all;
-    render json: @cars
+    render json:{ cars: @cars, code: 1}
   end
 end
