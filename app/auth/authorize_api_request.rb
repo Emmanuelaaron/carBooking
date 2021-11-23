@@ -12,10 +12,11 @@ class AuthorizeApiRequest
   attr_reader :headers
 
   def check
-    return { message: 'Missing Token!', code: 404 } if !http_auth_header
-    return { message: 'Wrong Token!', code: 404 } if !decoded_auth_token
-    return { message: 'User not found!', code: 404 } if !user
-    return { user: user, code: 1}
+    return { message: 'Missing Token!', code: 404 } unless http_auth_header
+    return { message: 'Wrong Token!', code: 404 } unless decoded_auth_token
+    return { message: 'User not found!', code: 404 } unless user
+
+    { user: user, code: 1 }
   end
 
   def user
