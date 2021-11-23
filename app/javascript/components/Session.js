@@ -15,8 +15,8 @@ const Session = () => {
   };
 
   let ans = (
-    <div className="bg-session m-0 position-relative">
-      <div className="position-absolute top-50 start-50 translate-middle p-3 session-container">
+    <div className="bg-session m-0 position-relative p-0 border">
+      <div className="position-absolute top-50 start-50 translate-middle session-container">
         <div
           className="p-2 bg-dark-transparent text-white rounded-3 d-flex flex-column align-items-center"
         >
@@ -36,7 +36,7 @@ const Session = () => {
   if (currentSession.session) {
     ans = (
       <Router>
-        <div className="session-container">
+        <div className="page-container">
         <Navbar/>
         <Routes >
           <Route exact path="/" element={<HomePage />} />

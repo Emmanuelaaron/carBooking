@@ -6,10 +6,13 @@
 }
 
 .session-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.page-container {
   display: flex;
   flex-direction: row;
-  max-width: 100%;
-  width: 100%;
 }
 
 .title {
@@ -121,6 +124,10 @@
   }
 
   .session-container {
+    width: 95%;
+  }
+
+  .page-container {
     display: flex;
     flex-direction: column;
   }
