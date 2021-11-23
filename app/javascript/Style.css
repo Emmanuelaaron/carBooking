@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
+
+@font-face {
+  font-family: navbarLinks;
+  src: url('./Fonts/PassionOne-Regular.ttf');
+}
+
+.title {
+  font-family: 'Praise';
+  transform: rotate(-25deg);
+}
+
 .bg-session {
   background: linear-gradient(#415209d5 0%, #415209d5 100%), url(./Img/bglogin.jpg) no-repeat center;
   background-attachment: fixed;
@@ -12,4 +24,79 @@
 .session-container {
   max-width: 800px;
   width: 100%;
+}
+
+.navbar {
+  height: 100vh;
+  max-width: 27%;
+  max-width: 100%;
+  font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-right: 1px solid #97BF11;
+}
+
+.active, .active:visited {
+  background-color: #97BF11;
+  color: white;
+  font-style: unset;
+}
+
+.nav-link {
+  color: black;
+  border-radius: 10px 0 0 10px;
+}
+
+.nav-link:hover {
+  background-color: #97BF11;
+  color: #ffffff;
+}
+
+.link-container {
+  list-style: none;
+}
+
+.menuIcon {
+  width: 35px;
+}
+
+.log-out:hover, .log-out button:hover {
+  background-color: red;
+  border-radius: 10px 0 0 10px;
+  color: white;
+}
+
+.nav-icons{
+  width: 20px;
+  margin: 10px 0 10px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    max-height: 70px;
+    background-color: #97BF11;
+    border: 0;
+  }
+
+  .link-container {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 0;
+    background-color: #97BF11;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .nav-link {
+    color: #000000;
+  }
+
+  .active {
+    background-color: #ffffff;
+    color: #97BF11;
+  }
+
+  .title {
+    transform: rotate(-25deg);
+    color: #ffffff;
+  }
 }

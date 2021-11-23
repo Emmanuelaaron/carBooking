@@ -19,8 +19,8 @@ const Login = () => {
 
   return (
     <Col md="6">
-      <Form className="p-3">
-        <Form.Group className="mb-3" controlId="">
+      <Form className="p-3" action="javascript:void(0);" >
+        <Form.Group className="mb-3">
           <Form.Label className="fs-1">Login:</Form.Label>
           <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
         </Form.Group>
