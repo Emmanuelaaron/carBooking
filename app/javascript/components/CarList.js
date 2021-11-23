@@ -17,15 +17,14 @@ const CarList = (props) => {
   };
 
   return (
-    <Row className="m-0 p-0 h-100">
-      <Col md="1" className="p-0">
-        <div className="d-flex flex-column justify-content-center h-100">
-          <button className="home-left" onClick={pageLeftBtn} disabled={true}>
+    <Row className="m-0 p-0 h-100 position-relative">
+      <button
+        className={"position-absolute top-50 start-0 translate-middle-y " + (page === 1 ? "home-left-disabled" : "home-left")}
+        onClick={pageLeftBtn} disabled={ page === 1 ? true : false}
+      >
             <img className="arrowicon" src={triangleArrowImg}/>
-          </button>
-        </div>
-      </Col>
-      <Col md="10" className="flex-grow">
+      </button>
+      <Col md="12" className="flex-grow">
         <div className="d-flex flex-column justify-content-center h-100">
           <div className="w-100 text-center">
             <h2>LATEST MODELS</h2>
@@ -40,13 +39,12 @@ const CarList = (props) => {
           </div>
         </div>
       </Col>
-      <Col md="1" className="p-0">
-        <div className="d-flex flex-column justify-content-center h-100">
-          <button className="home-rigth" onClick={pageRigthBtn}>
+      <button
+        className={"position-absolute top-50 end-0 translate-middle-y " + (page === (cars.length/3) ? "home-rigth-disabled" : "home-rigth")}
+        onClick={pageRigthBtn} disabled={ page === (cars.length/3) ? true : false }
+      >
             <img className="arrowicon-inverse" src={triangleArrowImg}/>
-          </button>
-        </div>
-      </Col>
+      </button>
     </Row>
   );
 }

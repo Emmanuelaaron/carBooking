@@ -8,8 +8,14 @@ export const saveCars = (payload) => ({
 });
 
 export const fetchCars = () => async (dispatch) => {
+
+  const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://localhost:3000/api/v1/home', {
     method: 'GET',
+    headers: { 
+      'Content-Type': 'application/json',
+      Authorization: token
+    },
   }).then((response) => response.json())
   .then((data) => {
     console.log(data);

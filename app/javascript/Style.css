@@ -90,7 +90,17 @@
   font-weight: 900;
   border-radius: 0 35px 35px 0;
   padding: 20px 0 22px 30px;
-  margin-right: 20px;
+  width: 90px;
+}
+
+.home-left-disabled {
+  background-color: #525252;
+  border: 0;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 0 35px 35px 0;
+  padding: 20px 0 22px 30px;
+  width: 90px;
 }
 
 .home-rigth {
@@ -100,7 +110,17 @@
   font-weight: 900;
   border-radius: 35px 0 0 35px;
   padding: 20px 30px 22px 0;
-  margin-left: 20px;
+  width: 90px;
+}
+
+.home-rigth-disabled {
+  background-color: #525252;
+  border: 0;
+  color: #ffffff;
+  font-weight: 900;
+  border-radius: 35px 0 0 35px;
+  padding: 20px 30px 22px 0;
+  width: 90px;
 }
 
 .arrowicon {
@@ -112,6 +132,15 @@
   width: 25px;
   height: 15px;
   transform: rotate(-180deg);
+}
+
+.car-icons {
+  width: 25px;
+  margin: 10px 0 10px 0;
+  border: 1px solid #7e7e7e;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 3px;
 }
 
 @media (max-width: 768px) {
