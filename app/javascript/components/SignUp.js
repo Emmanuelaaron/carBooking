@@ -25,7 +25,7 @@ const SignUp = () => {
           <img src={logo} className="w-100" />
         </Col>
         <Col md="6">
-          <Form className="p-3" action="javascript:void(0);">
+          <Form className="p-3" onSubmit={(e) => e.preventDefault()}>
             <Form.Group className="mb-3">
               <Form.Label className="fs-1">Sign Up User:</Form.Label>
               <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
