@@ -8,9 +8,13 @@ const Car = (props) => {
   const { name, description, model, price } = props.car;
   
   return (
-    <div className="col-4">
+    <div
+      className="col-12 col-md-4"
+    >
       <div className="p-3">
-        <img className="w-100" src="https://glimageurl.golocall.com/golocal-post/image/747905_fusionplus_1501151964.jpeg"/>
+        <img
+          className="w-100" src="https://glimageurl.golocall.com/golocal-post/image/747905_fusionplus_1501151964.jpeg"
+        />
       </div>
       <p className="fs-3 text-center fw-3 m-0">{model.toUpperCase()}</p>
       <p className="text-center text-muted m-0">{name}</p>
