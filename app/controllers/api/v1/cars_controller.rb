@@ -5,7 +5,6 @@ class Api::V1::CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    render json: { cars: @cars, code: 1 }
-    # render json:{ cars: @cars, code: 1, requested_by: @current_user[:username]}
+    render json: { cars: @cars, code: 200 }
   end
 end
