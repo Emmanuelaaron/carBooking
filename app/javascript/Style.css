@@ -175,6 +175,23 @@
   min-width: 0;
 }
 
+.dotIndicator {
+  background-color: rgb(128, 128, 128);
+  width: 10px;
+  height: 10px;
+  margin: 0 2px 0 2px;
+  border-radius: 50%;
+}
+
+.dotActive {
+  border: 10px solid #97bf11;
+  background-color: #97bf11;
+  width: 10px;
+  height: 10px;
+  margin: 0 3px 0 3px;
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   .navbar {
     max-width: 100%;
@@ -285,5 +302,4 @@
     padding: 20px 0 22px 0;
     width: 40px;
   }
-  
 }
