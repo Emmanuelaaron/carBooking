@@ -19,7 +19,7 @@ const HomePage = () => {
   );
 
   if (cars) {
-    ans = <div className="home w-100">
+    ans = <div className="container-fluid m-0 p-0">
       <CarList cars={cars} />
     </div>;
   }
