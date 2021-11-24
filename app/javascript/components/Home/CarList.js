@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import { Row, Col } from 'react-bootstrap';
-import triangleArrowImg from '../Img/triangle-arrow.png';
 import Car from './Car';
 import HomeAbuttons from './HomeAbuttons';
 import HomeBbuttons from './HomeBbuttons';
