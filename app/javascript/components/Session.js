@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import Navbar from './Navbar';
+import ReservationForm from './reservationForm/ReservationForm';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -39,7 +40,7 @@ const Session = () => {
         <Navbar/>
         <Routes >
           <Route exact path="/" element={<p>Home Page!!</p>} />
-          <Route exact path="/newreservation" element={<p>New Reservations!!</p>} />
+          <Route exact path="/newreservation" element={< ReservationForm />} />
           <Route exact path="/reservations" element={<p>Reservations!!</p>} />
           <Route exact path="/newcar" element={<p>New Car!!</p>} />
           <Route exact path="/deletecar" element={<p>Delete Car!!</p>} />
