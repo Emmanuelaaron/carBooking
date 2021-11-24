@@ -5,6 +5,8 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Navbar from './Navbar';
 import ReservationForm from './reservationForm/ReservationForm';
+import HomePage from './Home/HomePage';
+import CarShownPage from './CarShow/CarShownPage';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -15,8 +17,8 @@ const Session = () => {
   };
 
   let ans = (
-    <div className="bg-session m-0 position-relative">
-      <div className="position-absolute top-50 start-50 translate-middle p-3 session-container">
+    <div className="bg-session m-0 position-relative p-0 border">
+      <div className="position-absolute top-50 start-50 translate-middle session-container">
         <div
           className="p-2 bg-dark-transparent text-white rounded-3 d-flex flex-column align-items-center"
         >
@@ -36,14 +38,15 @@ const Session = () => {
   if (currentSession.session) {
     ans = (
       <Router>
-        <div className="d-flex flex-column d-md-flex flex-md-row">
+        <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
         <Navbar/>
         <Routes >
-          <Route exact path="/" element={<p>Home Page!!</p>} />
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/car/:id" element={<CarShownPage />} />
           <Route exact path="/newreservation" element={< ReservationForm />} />
-          <Route exact path="/reservations" element={<p>Reservations!!</p>} />
-          <Route exact path="/newcar" element={<p>New Car!!</p>} />
-          <Route exact path="/deletecar" element={<p>Delete Car!!</p>} />
+          <Route path="/reservations" element={<p>Reservations!!</p>} />
+          <Route path="/newcar" element={<p>New Car!!</p>} />
+          <Route path="/deletecar" element={<p>Delete Car!!</p>} />
         </Routes>
         </div>
       </Router>
