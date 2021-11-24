@@ -5,6 +5,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Navbar from './Navbar';
 import HomePage from './Home/HomePage';
+import ReservationForm from './reservationForm/ReservationForm';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -36,15 +37,15 @@ const Session = () => {
   if (currentSession.session) {
     ans = (
       <Router>
-        <div className="container-fluid m-0 p-0 d-flex flex-column flex-md-row">
-          <Navbar/>
-          <Routes >
-            <Route exact path="/" element={<HomePage />} />
-            <Route path="/newreservation" element={<p>New Reservations!!</p>} />
-            <Route path="/reservations" element={<p>Reservations!!</p>} />
-            <Route path="/newcar" element={<p>New Car!!</p>} />
-            <Route path="/deletecar" element={<p>Delete Car!!</p>} />
-          </Routes>
+        <div className="d-flex flex-column d-md-flex flex-md-row">
+        <Navbar/>
+        <Routes >
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/newreservation" element={< ReservationForm />} />
+          <Route exact path="/reservations" element={<p>Reservations!!</p>} />
+          <Route exact path="/newcar" element={<p>New Car!!</p>} />
+          <Route exact path="/deletecar" element={<p>Delete Car!!</p>} />
+        </Routes>
         </div>
       </Router>
     );
