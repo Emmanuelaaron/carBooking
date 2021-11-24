@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import triangleArrowImg from '../Img/triangle-arrow.png';
+import triangleArrowImg from '../../Img/triangle-arrow.png';
 
 const HomeBbuttons = (props) => {
 

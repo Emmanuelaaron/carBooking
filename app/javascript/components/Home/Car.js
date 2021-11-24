@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import facebookImg from '../Img/facebook.png';
-import twitterImg from '../Img/twitter.png';
-import googleplusImg from '../Img/googleplus.png';
+import facebookImg from '../../Img/facebook.png';
+import twitterImg from '../../Img/twitter.png';
+import googleplusImg from '../../Img/googleplus.png';
 
 const Car = (props) => {
   const { name, description, model, price } = props.car;

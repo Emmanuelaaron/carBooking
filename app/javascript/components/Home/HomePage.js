@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCars } from '../Redux/Home/Cars';
+import { fetchCars } from '../../Redux/Home/Cars';
 import CarList from './CarList';
 
 const HomePage = () => {
