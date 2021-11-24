@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post '/login', to: "users#login"
       get '/home', to: "cars#index"
       get '/carsNcities', to: "reservations#index"
+      post '/reservations/new', to: "reservations#create"
     end
   end
 
