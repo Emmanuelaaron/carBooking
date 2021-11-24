@@ -143,6 +143,17 @@
   margin: 3px;
 }
 
+.slider-container {
+  height: auto;
+  display: inline-flex;
+  flex-direction: row;
+  overflow: hidden;
+  scrollbar-width: none;
+  transform: translateX(0);
+  will-change: transform;
+  transition: transform 0.3s ease-out;
+}
+
 @media (max-width: 768px) {
   .navbar {
     max-width: 100%;
