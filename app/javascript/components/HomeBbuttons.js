@@ -27,7 +27,7 @@ const HomeBbuttons = (props) => {
 }
 
 HomeBbuttons.propTypes = {
-  page: PropTypes.string,
+  page: PropTypes.number,
   carsCount: PropTypes.number,
   leftfunction: PropTypes.func,
   rigthfunction: PropTypes.func
