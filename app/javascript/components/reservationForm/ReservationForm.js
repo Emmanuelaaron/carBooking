@@ -7,7 +7,34 @@ import DatePicker from "react-datepicker";
 import { fetchCarsNCities } from '../../Redux/Reservation/Reservation'
 
 const ReservationForm = () =>{ 
-  const [startDate, setStartDate] = useState(new Date());
+  const [reservationData, setReservationData]  = useState({
+    date: new Date(),
+    car_id: "",
+    city_id: "",
+  });
+  
+  const updateDate = (date) => {
+    setReservationData((prevState) => ({
+      ...prevState,
+      date: date
+    }))
+  }
+
+  const updateCarId = (value) => {
+    setReservationData((prevState) => ({
+      ...prevState,
+      car_id: parseInt(value)
+    }))
+  }
+
+  const updateCityId = (value) => {
+    setReservationData((prevState) => ({
+      ...prevState,
+      city_id: parseInt(value)
+    }))
+  }
+
+  console.log(reservationData)
   
   const { cars, cities } = useSelector((state) => state.reservations);
 
@@ -18,10 +45,7 @@ const ReservationForm = () =>{
     loadCarsNCities();
   }, []);
 
-  console.log(cars)
-  console.log(cities)
-
-  let result = (<p>LOADING...</p>)
+  let result = (<h1>LOADING...</h1>)
 
   if (cars && cities) {
     result = 
@@ -29,7 +53,7 @@ const ReservationForm = () =>{
       <h1 className="w-100 text-center mt-5">Reserve a Car</h1>
 
       <Form className="w-75 mx-auto my-5">
-        <Form.Select aria-label="select a car" className="my-3">
+        <Form.Select aria-label="select a car" className="my-3" onChange={(e) => updateCarId(e.target.value)}>
           <option>Select a Car</option>
           {
             cars.map(car => (
@@ -40,7 +64,7 @@ const ReservationForm = () =>{
           }
         </Form.Select>
 
-        <Form.Select aria-label="Select a city" className="my-3">
+        <Form.Select aria-label="Select a city" className="my-3" onChange={(e) => updateCityId(e.target.value)}>
           <option>Select a City</option>
           {
             cities.map(city => (
@@ -51,7 +75,7 @@ const ReservationForm = () =>{
           }
         </Form.Select>
 
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="my-3" />
+        <DatePicker selected={reservationData.date} onChange={(date) => updateDate(date)} className="my-3" />
 
         <Button variant="primary" type="submit">
           Submit

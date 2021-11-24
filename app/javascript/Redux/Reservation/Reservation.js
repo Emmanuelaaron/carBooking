@@ -24,6 +24,20 @@ export const fetchCarsNCities = () => async (dispatch) => {
   })
 };
 
+export const createReservation = (formData) => async (dispatch) => {
+  const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
+  await fetch('http://127.0.0.1:3000/api/v1/reservations/new', {
+    method: 'POST',
+    headers: { 
+      Authorization: token
+    },
+    body: formData,
+  }).then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+  })
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CARS_N_CITIES:

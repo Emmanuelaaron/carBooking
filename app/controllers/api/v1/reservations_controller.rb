@@ -4,10 +4,10 @@ class Api::V1::ReservationsController < ApplicationController
   before_action :authorize_request
 
   def create
-    user_id = @current_user[:id]
-    @reservation = Reservation.new(date: "", car_id: "", city_id: "", user_id: user_id)
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = @current_user[:id]
     if @reservation.save
-      render json: { reservation: @reservation, code: 201}
+      render json: { reservation: @reservation, code: 201 }
     else
       render json: { message: 'Reservation not created', code: 409 }
     end
@@ -16,6 +16,12 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     @cities = City.all
     @cars = Car.all
-    render json: { cities: @cities,  cars: @cars, code: 200 }
+    render json: { cities: @cities, cars: @cars, code: 200 }
+  end
+
+  private
+
+  def reservation_params
+    params.permit(:date, :car_id, :city_id)
   end
 end
