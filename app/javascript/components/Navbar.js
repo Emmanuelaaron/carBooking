@@ -54,16 +54,16 @@ const Navbar = () => {
   };
 
   return (
-    <Nav className="d-flex flex-row d-md-flex flex-md-column navbar m-0 p-0 flex-wrap-no border" >
+    <Nav className="d-flex flex-row d-md-flex flex-md-column justify-content-between navbar m-0 p-0 flex-nowrap" >
       <button
-        className="d-md-none border-0 bg-transparent p-2"
+        className="d-md-none border-0 bg-transparent p-2 order-0"
         onClick={menuBtnHandler}
       >
         <img className="menuIcon" src={menuIcon} />
       </button>
-      <p className="menuTitle">J.D.E. Motor's</p>
-      <div className="align-self-stretch flex-fill w-100 p-0">
-        <ul className={menuStatus + " d-md-flex flex-md-column justify-content-around link-container flex-md-nowrap"}>
+      <p className="menuTitle order-3 order-md-0">J.D.E. Motor's</p>
+      <div className="align-self-stretch flex-fill w-100 p-0 order-1 order-md-1">
+        <ul className={menuStatus + " d-md-flex flex-md-column justify-content-around link-container ps-2"}>
           {
             menuLinks.map((link) => (
               link.id !== 6 ?
@@ -93,7 +93,7 @@ const Navbar = () => {
           }
         </ul>
       </div>
-      <div className="d-none d-md-block m-0">
+      <div className="d-none d-md-block m-0 order-md-2">
         <div className="d-flex flex-row justify-content-around m-0">
           <a href="#" target="_blank"><img className="nav-icons" src={twitterImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={facebookImg} /></a>

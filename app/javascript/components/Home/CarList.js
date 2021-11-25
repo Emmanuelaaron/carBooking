@@ -28,7 +28,7 @@ const CarList = (props) => {
   };
 
   return (
-    <Row className="m-0 p-0 h-100 position-relative">
+    <Row className="m-0 p-0 h-100 position-relative w-100">
       <Col md="12" className="flex-grow">
         <div className="d-flex flex-column justify-content-center h-100">
           <div className="w-100 text-center">
