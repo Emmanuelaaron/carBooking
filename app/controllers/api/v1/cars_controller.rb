@@ -9,22 +9,23 @@ class Api::V1::CarsController < ApplicationController
     # render json:{ cars: @cars, code: 1, requested_by: @current_user[:username]}
   end
 
-  def create 
-      @car = Car.new(cars_params)
-        if @car.save
-          render json: {
-            message: 'Car Added',
-            code: 201
-          }
-        else
-          render json: {
-            message: @car.errors.messages
-          }
-        end
+  def create
+    @car = Car.new(cars_params)
+    if @car.save
+      render json: {
+        message: 'Car Added',
+        code: 201
+      }
+    else
+      render json: {
+        message: @car.errors.messages
+      }
+    end
   end
 
   private
-    def cars_params
-      params.permit(:name, :model, :description, :price, :image)
-    end
+
+  def cars_params
+    params.permit(:name, :model, :description, :price, :image)
+  end
 end
