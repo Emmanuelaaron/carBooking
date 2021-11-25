@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styles from './reservationForm.module.css';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import { fetchCarsNCities, createReservation } from '../../Redux/Reservation/Reservation'
+import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
 
 const ReservationForm = () =>{ 
   const { cars, cities } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
   const sendFormData = bindActionCreators(createReservation, dispatch);
+  const [message, setMessage] = useState(null);
 
   const [reservationData, setReservationData]  = useState({
     date: new Date(),
@@ -41,18 +43,33 @@ const ReservationForm = () =>{
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    sendFormData(reservationData)
+    sendFormData(reservationData, setMessage);
   }
 
   useEffect(() => {
     loadCarsNCities();
   }, []);
 
-  let result = (<h1>LOADING...</h1>)
+  let result = (
+    <div className="d-flex flex-column w-100 justify-content-center align-items-center">
+      < CircularProgress 
+        color="#97bf11" 
+        width="100px" 
+        height="100px" 
+      />
+      <h2>Loading...</h2>
+    </div>
+  )
 
   if (cars && cities) {
     result = 
     <div className={styles.container} id="reservationForm-container">
+      { message != null &&
+        <Alert variant="success" className="text-center">
+          <Alert.Heading>{message}</Alert.Heading>
+          <p>Your car was successfully reserved.</p>
+        </Alert>
+      }
       <h1 className="w-100 text-center mt-5">Reserve a Car</h1>
 
       <Form className="w-75 mx-auto my-5" onSubmit={handleSubmit}>

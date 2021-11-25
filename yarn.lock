@@ -7159,6 +7159,11 @@
     "uncontrollable" "^7.2.1"
     "warning" "^4.0.3"
 
+"react-cssfx-loading@^1.0.2":
+  "integrity" "sha512-Dzpwc5XBWfDAWAm7XREVAX1kbs2ngwlf7h7qykVR1yOlZtYWRQFnmVjE9lxL2VILNw/sRkvflX+oA7WwgpCjew=="
+  "resolved" "https://registry.npmjs.org/react-cssfx-loading/-/react-cssfx-loading-1.0.2.tgz"
+  "version" "1.0.2"
+
 "react-datepicker@^4.3.0":
   "integrity" "sha512-cg+gp4YnPcZc6iZ0+v7VuRgcFG22KL7izHYrCxXeSLOn5VGkyxTfcu5qA/cGIsngurCt/u0NtgVTlHB1Fwap1g=="
   "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.3.0.tgz"
@@ -7250,7 +7255,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^15.5.x || ^16.x || ^17.x", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0-rc.1", "react@^16.8.3 || ^17", "react@^16.9.0 || ^17", "react@^17.0.2", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0", "react@17.0.2":
+"react@^15.5.x || ^16.x || ^17.x", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0-rc.1", "react@^16.8.3 || ^17", "react@^16.9.0 || ^17", "react@^17.0.2", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0", "react@>=17.0.2", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
