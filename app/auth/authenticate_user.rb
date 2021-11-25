@@ -15,6 +15,6 @@ class AuthenticateUser
     user = User.find_by(username: @username)
     return user if user
 
-    raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
+    render json: { message: 'User does not exist!', code: 404 }
   end
 end

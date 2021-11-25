@@ -18,22 +18,32 @@ const SignUp = () => {
     createUserAction(userInp);
   };
 
+  const inputEnterSubmit = (e) => {
+    if (e.key === 'Enter'){
+      createUserAction(userInp);
+    }
+  };
+
   return (
     <Container>
       <Row className="m-0">
-        <Col md="6 p-3">
+        <Col md="6" className="p-3">
           <img src={logo} className="w-100" />
         </Col>
         <Col md="6">
-          <Form className="p-3" onSubmit={(e) => e.preventDefault()}>
-            <Form.Group className="mb-3">
-              <Form.Label className="fs-1">Sign Up User:</Form.Label>
-              <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
+          <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()}>
+            <Form.Label className="fs-1 text-center">Sign Up User:</Form.Label>
+            <Form.Group className="mb-3 d-flex flex-row">
+              <Form.Control
+                type="username"
+                placeholder="Enter Username:"
+                onChange={(e) => UpdateUserInp(e.target.value)}
+                onKeyUp={(e) => inputEnterSubmit(e)}
+              />
+              <Button variant="success" type="button" onClick={createUserBtnHandler}>
+                SignUp
+              </Button>
             </Form.Group>
-
-            <Button variant="primary" type="button" onClick={createUserBtnHandler}>
-              Sign Up
-            </Button>
           </Form>
         </Col>
       </Row>

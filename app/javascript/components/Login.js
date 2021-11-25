@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import { loginUser } from '../Redux/Session/Session';
+import logo from '../Img/logo.jpg';
 
 const Login = () => {
   const [userInp, setUserInp] = useState('');
@@ -17,20 +18,36 @@ const Login = () => {
     loginUserAction(userInp);
   };
 
+  const inputEnterSubmit = (e) => {
+    if (e.key === 'Enter'){
+      loginUserAction(userInp);
+    }
+  };
+
   return (
-    <Col md="6">
-      <Form className="p-3" onSubmit={(e) => e.preventDefault()} >
-        <Form.Group className="mb-3">
-          <Form.Label className="fs-1">Login:</Form.Label>
-          <Form.Control type="username" placeholder="Enter Username:" onChange={(e) => UpdateUserInp(e.target.value)} />
-        </Form.Group>
-
-        <Button variant="primary" type="button" onClick={loginUserBtnHandler}>
-          Login
-        </Button>
-      </Form>
-    </Col>
-
+    <Container>
+      <Row>
+        <Col md="6" className="p-4">
+          <img src={logo} className="w-100" />
+        </Col>
+        <Col md="6">
+          <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()} >
+            <Form.Label className="fs-1 text-center">Login:</Form.Label>
+            <Form.Group className="mb-3 d-flex">
+              <Form.Control
+                type="username"
+                placeholder="Enter Username:"
+                onChange={(e) => UpdateUserInp(e.target.value)}
+                onKeyUp={(e) => inputEnterSubmit(e)}
+              />
+              <Button variant="success" className="align-self-end" type="button" onClick={loginUserBtnHandler}>
+              Login
+            </Button>
+            </Form.Group>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

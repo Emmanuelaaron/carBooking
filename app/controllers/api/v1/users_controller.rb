@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
         token = AuthenticateUser.new(body_params[:username]).call
         token['message'] = 'User Created Succesfuly!'
         token['code'] = 1
-        render json: token
+        render json: { token: token }
       else
         render json: { message: 'User is already in use', code: 409 }
       end
