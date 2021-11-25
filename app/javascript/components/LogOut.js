@@ -15,7 +15,7 @@ const LogOut = (props) => {
   return (
     <button
       type="button"
-      className="fs-4 px-4 border-0 bg-transparent"
+      className="ps-3 fs-5 px-4 border-0 bg-transparent"
       onClick={logginOutBtnHandle}
     >
       {text}

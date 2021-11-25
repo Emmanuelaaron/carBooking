@@ -1,0 +1,9 @@
+@font-face {
+  font-family: title;
+  src: url('../../Fonts/PassionOne-Regular.ttf');
+}
+
+.container {
+  font-family: title, Arial, sans-serif;
+  width: 100%;
+}
