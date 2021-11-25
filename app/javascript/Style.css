@@ -82,7 +82,7 @@
 .home-left {
   background-color: #97bf11;
   border: 0;
-  color: #ffffff;
+  color: #fff;
   font-weight: 900;
   border-radius: 0 35px 35px 0;
   padding: 20px 0 22px 15px;
@@ -92,7 +92,7 @@
 .home-left-disabled {
   background-color: #525252;
   border: 0;
-  color: #ffffff;
+  color: #fff;
   font-weight: 900;
   border-radius: 0 35px 35px 0;
   padding: 20px 0 22px 15px;
@@ -110,7 +110,7 @@
 .home-rigth {
   background-color: #97bf11;
   border: 0;
-  color: #ffffff;
+  color: #fff;
   font-weight: 900;
   border-radius: 35px 0 0 35px;
   padding: 20px 15px 22px 0;
@@ -120,7 +120,7 @@
 .home-rigth-disabled {
   background-color: #525252;
   border: 0;
-  color: #ffffff;
+  color: #fff;
   font-weight: 900;
   border-radius: 35px 0 0 35px;
   padding: 20px 15px 22px 0;
@@ -135,7 +135,6 @@
   display: none;
 }
 
-
 .arrowicon {
   width: 25px;
   height: 15px;
@@ -149,11 +148,10 @@
 
 .car-icons {
   width: 25px;
-  margin: 10px 0 10px 0;
+  margin: 5px;
   border: 1px solid #7e7e7e;
   border-radius: 50%;
   padding: 5px;
-  margin: 3px;
 }
 
 .slider-container {
@@ -245,7 +243,7 @@
   .home-left-disabled {
     display: none;
   }
-  
+
   .home-rigth {
     display: none;
   }
@@ -258,18 +256,18 @@
     display: block;
     background-color: #97bf11;
     border: 0;
-    color: #ffffff;
+    color: #fff;
     font-weight: 900;
     border-radius: 0 35px 35px 0;
     padding: 20px 0 22px 0;
     width: 40px;
   }
-  
+
   .phone-left-disabled {
     display: block;
     background-color: #525252;
     border: 0;
-    color: #ffffff;
+    color: #fff;
     font-weight: 900;
     border-radius: 0 35px 35px 0;
     padding: 20px 0 22px 0;
@@ -280,18 +278,18 @@
     display: block;
     background-color: #97bf11;
     border: 0;
-    color: #ffffff;
+    color: #fff;
     font-weight: 900;
     border-radius: 35px 0 0 35px;
     padding: 20px 0 22px 0;
     width: 40px;
   }
-  
+
   .phone-rigth-disabled {
     display: block;
     background-color: #525252;
     border: 0;
-    color: #ffffff;
+    color: #fff;
     font-weight: 900;
     border-radius: 35px 0 0 35px;
     padding: 20px 0 22px 0;
