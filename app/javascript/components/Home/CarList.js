@@ -7,7 +7,7 @@ import HomeBbuttons from './HomeBbuttons';
 import PageIndicator from './PageIndicator';
 
 const CarList = (props) => {
-  const { cars } = props;
+  const { cars, setdiplayCar } = props;
   const [page, setPage] = useState(0);
   const [Ppage, setPPage] = useState(0);
 
@@ -46,6 +46,7 @@ const CarList = (props) => {
                   return <Car
                     key={car.id}
                     car={car}
+                    setdiplayCar={setdiplayCar}
                   />;
                 })
               }
@@ -62,6 +63,7 @@ const CarList = (props) => {
                   return <Car
                     key={car.id}
                     car={car}
+                    setdiplayCar={setdiplayCar}
                   />;
                 })
               }
@@ -86,7 +88,8 @@ const CarList = (props) => {
 }
 
 CarList.propTypes = {
-  cars: PropTypes.array
+  cars: PropTypes.array,
+  setdiplayCar: PropTypes.func
 };
 
 export default CarList;
