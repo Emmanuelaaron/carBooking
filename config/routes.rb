@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post '/newuser', to: "users#create"
       post '/login', to: "users#login"
       get '/home', to: "cars#index"
+      post '/newcar', to: "cars#create"
     end
   end
 
