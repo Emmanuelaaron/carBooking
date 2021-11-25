@@ -93,10 +93,6 @@
   box-shadow: 0 0 10px 0 #97bf11;
 }
 
-.home-rigth:hover {
-  box-shadow: 0 0 10px 0 #97bf11;
-}
-
 .home-left-disabled {
   background-color: #525252;
   border: 0;
@@ -133,6 +129,10 @@
   border-radius: 35px 0 0 35px;
   padding: 20px 15px 22px 0;
   width: 60px;
+}
+
+.home-rigth:hover {
+  box-shadow: 0 0 10px 0 #97bf11;
 }
 
 .phone-rigth {
