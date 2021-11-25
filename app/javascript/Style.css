@@ -1,18 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Praise&display=swap');
-
-@font-face {
-  font-family: navbarLinks;
-  src: url('./Fonts/PassionOne-Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Passion+One&display=swap');
 
 .page-container {
   display: flex;
   flex-direction: row;
-}
-
-.title {
-  font-family: 'Praise', Arial, Helvetica, sans-serif;
-  transform: rotate(-25deg);
 }
 
 .bg-session {
@@ -30,9 +20,16 @@
   height: 100vh;
   max-width: 20%;
   width: 100%;
-  font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Passion One', Arial, Helvetica, sans-serif;
   border-right: 1px solid #97bf11;
   z-index: 900;
+}
+
+.menuTitle {
+  font-family: 'Pacifico', cursive;
+  transform: rotate(-10deg);
+  margin:20px;
+  font-size: 35px;
 }
 
 .active,
@@ -54,6 +51,8 @@
 
 .link-container {
   list-style: none;
+  max-height: 400px;
+  height: 100%;
 }
 
 .menuIcon {
@@ -68,8 +67,9 @@
 }
 
 .nav-icons {
-  width: 20px;
-  margin: 10px 0 10px 0;
+  width:20px;
+  margin: 5px 0 5px 0;
+  padding: 0;
 }
 
 .home {
@@ -211,6 +211,14 @@
     width: 100vh;
   }
 
+  .menuTitle {
+    font-family: 'Pacifico', cursive;
+    transform: rotate(-10deg);
+    margin:2px;
+    font-size: 15px;
+    color: #ffffff;
+  }
+
   .page-container {
     display: flex;
     flex-direction: column;
@@ -232,11 +240,6 @@
   .active {
     background-color: #fff;
     color: #97bf11;
-  }
-
-  .title {
-    transform: rotate(-25deg);
-    color: #fff;
   }
 
   .home {

@@ -54,27 +54,27 @@ const Navbar = () => {
   };
 
   return (
-    <Nav className="d-flex flex-row d-md-flex flex-md-column navbar m-0 p-0" >
+    <Nav className="d-flex flex-row d-md-flex flex-md-column navbar m-0 p-0 flex-wrap-no border" >
       <button
         className="d-md-none border-0 bg-transparent p-2"
         onClick={menuBtnHandler}
       >
         <img className="menuIcon" src={menuIcon} />
       </button>
-      <h1 className="title m-4">VESPA</h1>
-      <div className="align-self-stretch flex-fill w-100 ps-3 pt-3">
-        <ul className={menuStatus + " d-md-flex flex-md-column link-container"}>
+      <p className="menuTitle">J.D.E. Motor's</p>
+      <div className="align-self-stretch flex-fill w-100 p-0">
+        <ul className={menuStatus + " d-md-flex flex-md-column justify-content-around link-container flex-md-nowrap"}>
           {
             menuLinks.map((link) => (
               link.id !== 6 ?
                 (
                   <li
-                    className="my-2 nav-item"
+                    className="nav-item"
                     key={link.id}
                     onClick={() => setMenuStatus('d-none')}
                   >
                     <NavLink
-                      className="fs-4 nav-link px-4"
+                      className="fs-5 nav-link px-3"
                       to={link.path}
                       activeclassname="active"
                       exact="true"
@@ -85,7 +85,7 @@ const Navbar = () => {
                 )
                 :
                 (
-                  <li className="my-2 nav-item log-out py-2" key={link.id}>
+                  <li className="nav-item log-out py-2" key={link.id}>
                     <LogOut text={link.text.toUpperCase()} />
                   </li>
                 ) 
@@ -93,15 +93,15 @@ const Navbar = () => {
           }
         </ul>
       </div>
-      <div className="d-none d-md-block">
-        <div className="d-flex flex-row justify-content-around">
+      <div className="d-none d-md-block m-0">
+        <div className="d-flex flex-row justify-content-around m-0">
           <a href="#" target="_blank"><img className="nav-icons" src={twitterImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={facebookImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={googleplusImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={vimeoImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={pinterestImg} /></a>
         </div>
-        <p className="d-none d-md-block text-muted">{'© 2021 Microverse & C.S.P.A'}</p>
+        <p className="d-none d-md-block text-muted m-0">{'© 2021 Microverse & C.S.P.A'}</p>
       </div>
     </Nav>
   );
