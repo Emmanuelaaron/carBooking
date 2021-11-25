@@ -5,6 +5,18 @@
   src: url('./Fonts/PassionOne-Regular.ttf');
 }
 
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .page-container {
   display: flex;
   flex-direction: row;

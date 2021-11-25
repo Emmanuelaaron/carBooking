@@ -22,7 +22,7 @@ const HomePage = () => {
   );
 
   if (cars) {
-    ans = <div className="m-0 p-0 position-relative container-fluid">
+    ans = <div className="m-0 p-0 position-relative container-fluid home-container">
       <CarList cars={cars} setdiplayCar={setdiplayCar} />
       <CarShownPage car={diplayCar.car} display={diplayCar.display} setdiplayCar={setdiplayCar} />
     </div>;

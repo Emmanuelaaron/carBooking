@@ -1,5 +1,10 @@
-.home-page {
+.home-container{
   overflow: hidden;
-  height: 100%;
-  border: 1px solid blue;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .home-container{
+    height: 90vh;
+  }
 }
