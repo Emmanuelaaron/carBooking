@@ -24,7 +24,7 @@ export const fetchCarsNCities = () => async (dispatch) => {
   })
 };
 
-export const createReservation = (formData) => async (dispatch) => {
+export const createReservation = (formData, setMessage) => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://127.0.0.1:3000/api/v1/reservations/new', {
     method: 'POST',
@@ -35,7 +35,9 @@ export const createReservation = (formData) => async (dispatch) => {
     body: JSON.stringify(formData),
   }).then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    if(data.code === 201) {
+      setMessage("Reservation created")
+    }
   })
 };
 
