@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Reservation, type: :model do
   describe 'Check reservation validations' do
     before(:each) do
-      User.create(username: "testUser")
-      Car.create(name:"bugatti", model:"chiron", description:"2018 blue car", price:439000000)
-      City.create(name:"Montelibano")
+      User.create(username: 'testUser')
+      Car.create(name: 'bugatti', model: 'chiron', description: '2018 blue car', price: 439_000_000)
+      City.create(name: 'Montelibano')
     end
 
     it 'rejects empty date' do
@@ -29,9 +29,9 @@ RSpec.describe Reservation, type: :model do
     end
   end
 
-  describe "Check associations with other models" do
-    it { should belong_to(:user)}
-    it { should belong_to(:car)}
-    it { should belong_to(:city)}
+  describe 'Check associations with other models' do
+    it { should belong_to(:user) }
+    it { should belong_to(:car) }
+    it { should belong_to(:city) }
   end
 end
