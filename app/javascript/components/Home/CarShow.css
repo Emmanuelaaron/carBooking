@@ -11,7 +11,7 @@
   background-color: #97bf11;
   border: 0;
   border-radius: 35px;
-  color:#ffffff;
+  color: #fff;
   font-size: 30px;
   padding: 10px;
   text-decoration: none;
@@ -58,6 +58,7 @@
     left: 0;
     border-left: 1px solid #97bf11;
   }
+
   100% {
     left: 100%;
     display: none;
@@ -75,7 +76,7 @@
   }
 
   100% {
-    left:0;
+    left: 0;
     border: 0;
   }
 }
