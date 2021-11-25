@@ -4,9 +4,14 @@ import { bindActionCreators } from 'redux';
 import styles from './reservationForm.module.css';
 import { Form, Button } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
-import { fetchCarsNCities } from '../../Redux/Reservation/Reservation'
+import { fetchCarsNCities, createReservation } from '../../Redux/Reservation/Reservation'
 
 const ReservationForm = () =>{ 
+  const { cars, cities } = useSelector((state) => state.reservations);
+  const dispatch = useDispatch();
+  const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
+  const sendFormData = bindActionCreators(createReservation, dispatch);
+
   const [reservationData, setReservationData]  = useState({
     date: new Date(),
     car_id: "",
@@ -33,13 +38,11 @@ const ReservationForm = () =>{
       city_id: parseInt(value)
     }))
   }
-
-  console.log(reservationData)
   
-  const { cars, cities } = useSelector((state) => state.reservations);
-
-  const dispatch = useDispatch();
-  const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    sendFormData(reservationData)
+  }
 
   useEffect(() => {
     loadCarsNCities();
@@ -52,7 +55,7 @@ const ReservationForm = () =>{
     <div className={styles.container} id="reservationForm-container">
       <h1 className="w-100 text-center mt-5">Reserve a Car</h1>
 
-      <Form className="w-75 mx-auto my-5">
+      <Form className="w-75 mx-auto my-5" onSubmit={handleSubmit}>
         <Form.Select aria-label="select a car" className="my-3" onChange={(e) => updateCarId(e.target.value)}>
           <option>Select a Car</option>
           {

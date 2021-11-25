@@ -29,9 +29,10 @@ export const createReservation = (formData) => async (dispatch) => {
   await fetch('http://127.0.0.1:3000/api/v1/reservations/new', {
     method: 'POST',
     headers: { 
+      'Content-Type': 'application/json',
       Authorization: token
     },
-    body: formData,
+    body: JSON.stringify(formData),
   }).then((response) => response.json())
   .then((data) => {
     console.log(data)
