@@ -89,6 +89,14 @@
   width: 60px;
 }
 
+.home-left:hover {
+  box-shadow: 0 0 10px 0 #97bf11;
+}
+
+.home-rigth:hover {
+  box-shadow: 0 0 10px 0 #97bf11;
+}
+
 .home-left-disabled {
   background-color: #525252;
   border: 0;
