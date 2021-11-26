@@ -42,8 +42,8 @@ const Session = () => {
         <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
         <Navbar/>
         <Routes >
+          <Route path="/reservation/:id" element={< ReservationForm />} />
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/newreservation" element={< ReservationForm />} />
           <Route path="/reservations" element={<p>Reservations!!</p>} />
           <Route path="/newcar" element={<AddCar />} />
           <Route path="/deletecar" element={<p>Delete Car!!</p>} />

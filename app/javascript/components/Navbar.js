@@ -21,7 +21,7 @@ const Navbar = () => {
     },
     {
       id: 2,
-      path: '/newreservation',
+      path: '/reservation/new',
       text: 'Reservation Form'
     },
     {

@@ -91,6 +91,7 @@ GEM
     connection_pool (2.2.5)
     content_disposition (1.0.0)
     crass (1.0.6)
+    diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -99,7 +100,6 @@ GEM
       railties (>= 3.2)
     down (5.2.4)
       addressable (~> 2.8)
-    diff-lcs (1.4.4)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
@@ -256,6 +256,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (5.0.0)
+      activesupport (>= 5.2.0)
     shrine (3.4.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
@@ -264,8 +266,6 @@ GEM
       down (~> 5.0)
       http (>= 3.2, < 5)
       shrine (>= 3.0.0.rc, < 4)
-    shoulda-matchers (5.0.0)
-      activesupport (>= 5.2.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -330,9 +330,9 @@ DEPENDENCIES
   rubocop (>= 1.0, < 2.0)
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 5.0)
   shrine
   shrine-cloudinary
-  shoulda-matchers (~> 5.0)
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
