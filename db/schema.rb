@@ -15,11 +15,18 @@ ActiveRecord::Schema.define(version: 2021_11_26_175016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "carimgs", force: :cascade do |t|
+    t.string "image_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.string "model"
     t.string "description"
     t.integer "price"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_data"

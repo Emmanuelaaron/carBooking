@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom'
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,6 +8,11 @@ import { fetchCarsNCities, createReservation } from '../../Redux/Reservation/Res
 import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
 
 const ReservationForm = () =>{ 
+  const { id } = useParams();
+  let carid = parseInt(id);
+  if(id === "new") {
+    carid = ""
+  }
   const { cars, cities } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
@@ -15,11 +21,9 @@ const ReservationForm = () =>{
 
   const [reservationData, setReservationData]  = useState({
     date: new Date().toISOString().slice(0, 10),
-    car_id: "",
+    car_id: carid,
     city_id: "",
   });
-
-  console.log(reservationData)
   
   const updateDate = (date) => {
     setReservationData((prevState) => ({
@@ -77,7 +81,7 @@ const ReservationForm = () =>{
       </p>
       <Form className= "mx-auto my-2 d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <div className="my-3">
-          <Form.Select bsPrefix={styles.selection} aria-label="select a car" className={styles.textFont + " mx-1 text-center"}  onChange={(e) => updateCarId(e.target.value)}>
+          <Form.Select value={reservationData.car_id} bsPrefix={styles.selection} aria-label="select a car" className={styles.textFont + " mx-1 text-center"}  onChange={(e) => updateCarId(e.target.value)}>
             <option className={styles.textFont}>Select a Car</option>
             {
               cars.map(car => (
@@ -88,7 +92,7 @@ const ReservationForm = () =>{
             }
           </Form.Select>
 
-          <Form.Select bsPrefix={styles.selection} aria-label="Select a city" className={styles.textFont + " mx-1 text-center"} onChange={(e) => updateCityId(e.target.value)}>
+          <Form.Select bsPrefix={styles.selection} value={reservationData.city_id} aria-label="Select a city" className={styles.textFont + " mx-1 text-center"} onChange={(e) => updateCityId(e.target.value)}>
             <option>Select a City</option>
             {
               cities.map(city => (
