@@ -44,3 +44,23 @@
 .date {
   padding: 7.5px;
 }
+
+@media (max-width: 1048px) {
+  .container {
+    height: 100vh;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 20px 0;
+  }
+
+  .selection {
+    margin-top: 10px;
+  }
+}

@@ -75,8 +75,7 @@ const ReservationForm = () =>{
       <p className= {styles.textFont + " text-center text-white mb-3 mt-2"}>
         Rent with confidence with JDE MOTORS. Find your city's closest reservation location and hit the road! We provide service for over {cities.length} cities. No hidden fees.
       </p>
-      <Form className= "mx-auto my-2 d-flex flex-column align-items-center" onSubmit={handleSubmit}>
-        <div className="my-3">
+      <Form className= {styles.form + " mx-auto mt-4"} onSubmit={handleSubmit}>
           <Form.Select bsPrefix={styles.selection} aria-label="select a car" className={styles.textFont + " mx-1 text-center"}  onChange={(e) => updateCarId(e.target.value)}>
             <option className={styles.textFont}>Select a Car</option>
             {
@@ -104,7 +103,6 @@ const ReservationForm = () =>{
         <Button bsPrefix={styles.button} className={styles.textFont + "px-3"} type="submit">
           Submit
         </Button>
-        </div>
       </Form>
     </div>;
   }
