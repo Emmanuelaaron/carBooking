@@ -12,6 +12,7 @@ import vimeoImg from '../Img/vimeo.png';
 
 const Navbar = () => {
   const [menuStatus, setMenuStatus] = useState(false);
+  console.log(menuStatus);
 
   const menuLinks = [
     {
@@ -47,13 +48,7 @@ const Navbar = () => {
   ];
 
   const menuBtnHandler = () => {
-    if (menuStatus === false) {
-      setMenuStatus(true);
-    } else 
-    {
-      setMenuStatus(false);
-    }
-    
+    setMenuStatus(!menuStatus);
   };
 
   return (
@@ -66,7 +61,7 @@ const Navbar = () => {
       </button>
       <p className="title mb-0 mt-4">JDE MOTORS</p>
       <div className="align-self-stretch w-100 ps-3 pt-3">
-        <ul className={menuStatus + " d-md-flex flex-md-column link-container m-0 ps-2"}>
+        <ul className={( menuStatus ? "show-menu-links" : "hide-menu-links" ) + " d-md-flex flex-md-column link-container m-0 ps-2"}>
           {
             menuLinks.map((link) => (
               link.id !== 6 ?
