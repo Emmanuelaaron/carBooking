@@ -24,7 +24,8 @@ body {
 
 .title {
   font-family: 'Praise', Arial, Helvetica, sans-serif;
-  transform: rotate(-25deg);
+  transform: rotate(-10deg);
+  font-size: 2rem;
 }
 
 .bg-session {
@@ -302,4 +303,8 @@ body {
     padding: 20px 0 22px 0;
     width: 40px;
   }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
 }

@@ -58,9 +58,9 @@ const Navbar = () => {
       >
         <img className="menuIcon" src={menuIcon} />
       </button>
-      <h1 className="title m-4 order-2 order-md-1">VESPA</h1>
-      <div className="link-ul-container order-1 order-md-2">
-        <ul className={(menuStatus ? 'show-menu-links' : 'hide-menu-links') + " link-container m-0 ps-2"}>
+      <p className="title mb-0 mt-4">JDE MOTORS</p>
+      <div className="align-self-stretch w-100 ps-3 pt-3">
+        <ul className={menuStatus + " d-md-flex flex-md-column link-container m-0 ps-2"}>
           {
             menuLinks.map((link) => (
               link.id !== 6 ?
