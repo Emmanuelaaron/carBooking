@@ -40,3 +40,7 @@
 .selection::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+.date {
+  padding: 7.5px;
+}

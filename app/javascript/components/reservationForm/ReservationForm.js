@@ -99,7 +99,7 @@ const ReservationForm = () =>{
             }
           </Form.Select>
 
-          <Form.Control bsPrefix={styles.selection} className=" mx-1 px-4 text-center" type="date" value={reservationData.date} onChange={(e) => updateDate(e.target.value)} />
+          <Form.Control bsPrefix={styles.selection} className={styles.date + " mx-1 px-4 text-center"} type="date" value={reservationData.date} onChange={(e) => updateDate(e.target.value)} />
 
         <Button bsPrefix={styles.button} className={styles.textFont + "px-3"} type="submit">
           Submit
