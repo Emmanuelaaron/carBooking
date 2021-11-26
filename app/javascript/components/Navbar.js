@@ -47,7 +47,13 @@ const Navbar = () => {
   ];
 
   const menuBtnHandler = () => {
-    setMenuStatus(!menuStatus);
+    if (menuStatus === false) {
+      setMenuStatus(true);
+    } else 
+    {
+      setMenuStatus(false);
+    }
+    
   };
 
   return (

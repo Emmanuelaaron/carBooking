@@ -6,7 +6,7 @@ import googleplusImg from '../../Img/googleplus.png';
 
 const Car = (props) => {
   const { car, setdiplayCar } = props;
-  const { name, description, model } = car;
+  const { name, description, model, image_data } = car;
   
   return (
     <div
@@ -19,7 +19,7 @@ const Car = (props) => {
           onClick={() => setdiplayCar({car, display: true})}
         >
           <img
-            className="w-100" src="https://media.istockphoto.com/photos/illustration-of-generic-sports-coupe-car-on-white-picture-id1003904064?k=20&m=1003904064&s=612x612&w=0&h=qjMmK0xlPn7GLOefECHBNI0VWccVlLK7xo8vuIBw5uM="
+            className="w-100" src={image_data}
           />
         </button>
       </div>
@@ -40,6 +40,7 @@ Car.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
+    image_data: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired
   }).isRequired,
   setdiplayCar: PropTypes.func
