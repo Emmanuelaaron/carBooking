@@ -23,7 +23,6 @@
   border-radius: 30px;
   border: none;
   padding: 10px 40px;
-  margin-left: 25px;
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
@@ -43,4 +42,24 @@
 
 .date {
   padding: 7.5px;
+}
+
+@media (max-width: 1048px) {
+  .container {
+    height: 100vh;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 20px 0;
+  }
+
+  .selection {
+    margin-top: 10px;
+  }
 }
