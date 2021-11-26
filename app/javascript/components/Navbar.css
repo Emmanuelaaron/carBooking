@@ -1,0 +1,55 @@
+.link-ul-container {
+  width: 100%;
+  height: 100%;
+}
+
+.link-container {
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+  height: 100%;
+}
+
+.hide-menu-links {
+  display: flex;
+}
+
+.show-menu-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .link-container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 70px;
+    left: 0;
+    padding: 0;
+    background-color: #97bf11;
+    border-radius: 0 0 10px 0;
+    height: 400px;
+    width: 220px;
+    animation-name: showmenulinks;
+    animation-duration: 1s;
+  }
+
+  .hide-menu-links {
+    display: none;
+  }
+
+  .show-menu-links {
+    display: flex;
+  }
+
+  @keyframes showmenulinks {
+    from {
+      top: -470px;
+    }
+
+    to {
+      top: 70px;
+    }
+  }
+}

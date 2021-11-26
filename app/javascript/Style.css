@@ -64,12 +64,6 @@ body {
   color: #fff;
 }
 
-.link-container {
-  list-style: none;
-  max-height: 400px;
-  height: 100%;
-}
-
 .menuIcon {
   width: 35px;
 }
@@ -228,15 +222,6 @@ body {
   .page-container {
     display: flex;
     flex-direction: column;
-  }
-
-  .link-container {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 0;
-    background-color: #97bf11;
-    border-radius: 0 10px 10px 0;
   }
 
   .nav-link {
