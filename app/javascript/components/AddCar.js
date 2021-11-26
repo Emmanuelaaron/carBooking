@@ -38,7 +38,7 @@ const AddCar = () => {
     e.preventDefault()
     const form = new FormData()
     form.append('name', name)
-    form.append('mode', model)
+    form.append('model', model)
     form.append('description', description)
     form.append('price', price)
     form.append('image', imgInp)
