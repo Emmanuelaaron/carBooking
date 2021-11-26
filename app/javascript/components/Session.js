@@ -5,6 +5,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Navbar from './Navbar';
 import HomePage from './Home/HomePage';
+import AddCar from './AddCar';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
@@ -42,7 +43,7 @@ const Session = () => {
             <Route exact path="/" element={<HomePage />} />
             <Route path="/newreservation" element={<p>New Reservations!!</p>} />
             <Route path="/reservations" element={<p>Reservations!!</p>} />
-            <Route path="/newcar" element={<p>New Car!!</p>} />
+            <Route path="/newcar" element={<AddCar />} />
             <Route path="/deletecar" element={<p>Delete Car!!</p>} />
           </Routes>
         </div>
