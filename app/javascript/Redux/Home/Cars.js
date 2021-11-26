@@ -19,7 +19,7 @@ export const fetchCars = () => async (dispatch) => {
   }).then((response) => response.json())
   .then((data) => {
     console.log(data);
-    if (data.code === 1){
+    if (data.code === 200){
       dispatch(saveCars(data.cars));
     }
   }).catch((error) => {
