@@ -35,6 +35,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'image_processing'
+
+gem 'shrine'
+
+gem 'shrine-cloudinary'
+
 gem 'pg'
 
 gem 'hirb'
@@ -53,6 +59,8 @@ group :development do
   # gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'dotenv-rails'
   # RSpec for rails
   gem 'rspec-rails', '~> 5.0.0'
 end
