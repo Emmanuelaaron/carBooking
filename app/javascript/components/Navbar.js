@@ -61,7 +61,7 @@ const Navbar = () => {
       >
         <img className="menuIcon" src={menuIcon} />
       </button>
-      <h1 className="title mb-0 mt-4">VESPA</h1>
+      <p className="title mb-0 mt-4">JDE MOTORS</p>
       <div className="align-self-stretch w-100 ps-3 pt-3">
         <ul className={menuStatus + " d-md-flex flex-md-column link-container m-0 ps-2"}>
           {
