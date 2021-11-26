@@ -29,7 +29,7 @@ const CarList = (props) => {
 
   return (
     <Row className="m-0 p-0 h-100 position-relative">
-      <Col md="12" className="flex-grow">
+      <Col md="12" className="flex-grow p-0">
         <div className="d-flex flex-column justify-content-center h-100">
           <div className="w-100 text-center">
             <h2>LATEST MODELS</h2>
@@ -38,7 +38,7 @@ const CarList = (props) => {
           </div>
           <div className="d-none d-md-block slider-container">
             <div
-              className="slider"
+              className="slider car-list"
               style={{transform: `translateX(-${page * 100}%)`, transition: "transform 0.3s ease-out"}}
             >
               {
@@ -53,9 +53,9 @@ const CarList = (props) => {
             </div>
           </div>
 
-          <div className="d-md-none slider-container">
+          <div className="d-md-none slider-container md-car-container-a">
             <div
-              className="slider"
+              className="slider md-car-container-b"
               style={{transform: `translateX(-${Ppage * 100}%)`, transition: "transform 0.3s ease-out"}}
             >
               {

@@ -5,6 +5,18 @@
   src: url('./Fonts/PassionOne-Regular.ttf');
 }
 
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .page-container {
   display: flex;
   flex-direction: row;
@@ -51,12 +63,6 @@
 .nav-link:hover {
   background-color: #97bf11;
   color: #fff;
-}
-
-.link-container {
-  list-style: none;
-  max-height: 400px;
-  height: 100%;
 }
 
 .menuIcon {
@@ -217,15 +223,6 @@
   .page-container {
     display: flex;
     flex-direction: column;
-  }
-
-  .link-container {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    padding: 0;
-    background-color: #97bf11;
-    border-radius: 0 10px 10px 0;
   }
 
   .nav-link {

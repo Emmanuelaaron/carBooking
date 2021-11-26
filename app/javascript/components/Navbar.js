@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import LogOut from './LogOut';
+import './Navbar.css';
 import menuIcon from '../Img/menu.png';
 import facebookImg from '../Img/facebook.png';
 import twitterImg from '../Img/twitter.png';
@@ -10,7 +11,7 @@ import pinterestImg from '../Img/pinterest.png';
 import vimeoImg from '../Img/vimeo.png';
 
 const Navbar = () => {
-  const [menuStatus, setMenuStatus] = useState('d-none');
+  const [menuStatus, setMenuStatus] = useState(false);
 
   const menuLinks = [
     {
@@ -46,17 +47,13 @@ const Navbar = () => {
   ];
 
   const menuBtnHandler = () => {
-    if (menuStatus === 'd-none') {
-      setMenuStatus('d-block');
-    } else {
-      setMenuStatus('d-none');
-    }
+    setMenuStatus(!menuStatus);
   };
 
   return (
-    <Nav className="d-flex flex-row d-md-flex flex-md-column navbar m-0 p-0 flex-nowrap" >
+    <Nav className="d-flex flex-row d-md-flex flex-md-column navbar m-0 p-0 flex-nowrap shadow" >
       <button
-        className="d-md-none border-0 bg-transparent p-2"
+        className="d-md-none border-0 bg-transparent p-2 order-0"
         onClick={menuBtnHandler}
       >
         <img className="menuIcon" src={menuIcon} />
@@ -93,7 +90,7 @@ const Navbar = () => {
           }
         </ul>
       </div>
-      <div className="m-0 d-none d-md-block">
+      <div className="m-0 d-none d-md-block order-md-3">
         <div className="m-0 d-flex flex-row justify-content-around">
           <a href="#" target="_blank"><img className="nav-icons" src={twitterImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={facebookImg} /></a>
