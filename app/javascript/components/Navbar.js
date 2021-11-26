@@ -12,7 +12,6 @@ import vimeoImg from '../Img/vimeo.png';
 
 const Navbar = () => {
   const [menuStatus, setMenuStatus] = useState(false);
-  console.log(menuStatus);
 
   const menuLinks = [
     {
@@ -49,6 +48,7 @@ const Navbar = () => {
 
   const menuBtnHandler = () => {
     setMenuStatus(!menuStatus);
+    console.log(menuStatus);
   };
 
   return (
@@ -59,8 +59,8 @@ const Navbar = () => {
       >
         <img className="menuIcon" src={menuIcon} />
       </button>
-      <p className="title mb-0 mt-4">JDE MOTORS</p>
-      <div className="align-self-stretch w-100 ps-3 pt-3">
+      <p className="title m-1 order-2 order-md-1 lg-1">JDE MOTORS</p>
+      <div className="align-self-stretch w-100 ps-3 pt-3 order-md-2 order-1">
         <ul className={( menuStatus ? "show-menu-links" : "hide-menu-links" ) + " d-md-flex flex-md-column link-container m-0 ps-2"}>
           {
             menuLinks.map((link) => (
@@ -69,7 +69,7 @@ const Navbar = () => {
                   <li
                     className="nav-item"
                     key={link.id}
-                    onClick={() => setMenuStatus('d-none')}
+                    onClick={() => setMenuStatus(false)}
                   >
                     <NavLink
                       className="fs-5 nav-link px-3"
@@ -91,7 +91,7 @@ const Navbar = () => {
           }
         </ul>
       </div>
-      <div className="m-0 d-none d-md-block order-md-3">
+      <div className="m-0 d-none d-md-block order-md-3 order-3">
         <div className="m-0 d-flex flex-row justify-content-around">
           <a href="#" target="_blank"><img className="nav-icons" src={twitterImg} /></a>
           <a href="#" target="_blank"><img className="nav-icons" src={facebookImg} /></a>

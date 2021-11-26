@@ -22,12 +22,6 @@ body {
   flex-direction: row;
 }
 
-.title {
-  font-family: 'Praise', Arial, Helvetica, sans-serif;
-  transform: rotate(-10deg);
-  font-size: 2rem;
-}
-
 .bg-session {
   background: linear-gradient(#415209d5 0%, #415209d5 100%), url(./Img/bglogin.jpg) no-repeat center;
   background-attachment: fixed;
@@ -232,11 +226,6 @@ body {
   .active {
     background-color: #fff;
     color: #97bf11;
-  }
-
-  .title {
-    transform: rotate(-25deg);
-    color: #fff;
   }
 
   .home {
