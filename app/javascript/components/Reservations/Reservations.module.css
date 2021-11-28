@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+}
+
+table {
+  margin-top: 25px;
+}
