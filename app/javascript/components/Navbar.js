@@ -12,7 +12,6 @@ import vimeoImg from '../Img/vimeo.png';
 
 const Navbar = () => {
   const [menuStatus, setMenuStatus] = useState(false);
-  console.log(menuStatus);
 
   const menuLinks = [
     {
