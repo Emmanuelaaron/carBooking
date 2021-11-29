@@ -28,11 +28,13 @@ class Api::V1::CarsController < ApplicationController
     if @car
       @car.destroy
       render json: {
-        message: 'Car deleted succesfully'
+        message: 'Car deleted succesfully',
+        code: 202
       }
     else
       render json: {
-        message: 'Car does not exist'
+        message: 'Car does not exist',
+        code: 204
       }
     end
   end
