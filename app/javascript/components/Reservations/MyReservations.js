@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCarsNCities } from '../../Redux/Reservation/Reservation';
 import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
-import { style } from 'dom-helpers';
 
-function Reservations() {
+function MyReservations() {
   const { cars, cities, myReservations } = useSelector((state) => state.reservations)
   const dispatch = useDispatch();
   const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
@@ -14,10 +13,6 @@ function Reservations() {
   useEffect(() => {
     loadCarsNCities();
   }, []);
-
-  console.log("Cars", cars);
-  console.log("Cities", cities);
-  console.log("myReservations", myReservations);
 
   let result = (
     <div className="d-flex flex-column w-100 justify-content-center align-items-center">
@@ -63,4 +58,4 @@ function Reservations() {
   return result;
 }
 
-export default Reservations;
+export default MyReservations;
