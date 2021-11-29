@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 import ReservationForm from './reservationForm/ReservationForm';
 import HomePage from './Home/HomePage';
 import AddCar from './AddCar';
-import MyReservations from './Reservations/MyReservations'
+import MyReservations from './Reservations/MyReservations';
 import DeleteCars from './deleteCar';
 
 const Session = () => {
@@ -41,14 +41,14 @@ const Session = () => {
     ans = (
       <Router>
         <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
-        <Navbar/>
-        <Routes >
-          <Route path="/reservation/:id" element={< ReservationForm />} />
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/reservations" element={< MyReservations />} />
-          <Route path="/newcar" element={<AddCar />} />
-          <Route path="/deletecar" element={<DeleteCars />} />
-        </Routes>
+          <Navbar />
+          <Routes>
+            <Route path="/reservation/:id" element={<ReservationForm />} />
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/reservations" element={<MyReservations />} />
+            <Route path="/newcar" element={<AddCar />} />
+            <Route path="/deletecar" element={<DeleteCars />} />
+          </Routes>
         </div>
       </Router>
     );

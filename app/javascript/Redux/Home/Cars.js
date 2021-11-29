@@ -23,12 +23,9 @@ export const fetchCars = () => async (dispatch) => {
     },
   }).then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code === 200) {
         dispatch(saveCars(data.cars));
       }
-    }).catch((error) => {
-      console.log(error);
     });
 };
 
@@ -53,8 +50,7 @@ export const reducer = (state = initialState, action) => {
     case LOAD_CARS:
       return action.payload;
     case DELETE_CAR:
-      const newSstate = state.filter((car) => car.id !== action.id);
-      return newSstate;
+      return state.filter((car) => car.id !== action.id);
     default:
       return state;
   }

@@ -30,7 +30,7 @@ const Login = () => {
     <Container>
       <Row>
         <Col md="6" className="p-4">
-          <img src={logo} className="w-100" />
+          <img src={logo} className="w-100" alt="logo" />
         </Col>
         <Col md="6">
           <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()}>

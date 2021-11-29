@@ -59,7 +59,7 @@ const CarList = (props) => {
               style={{ transform: `translateX(-${Ppage * 100}%)`, transition: 'transform 0.3s ease-out' }}
             >
               {
-                cars.map((car, index) => (
+                cars.map((car) => (
                   <Car
                     key={car.id}
                     car={car}
@@ -88,8 +88,8 @@ const CarList = (props) => {
 };
 
 CarList.propTypes = {
-  cars: PropTypes.array,
-  setdiplayCar: PropTypes.func,
+  cars: PropTypes.arrayOf.isRequired,
+  setdiplayCar: PropTypes.func.isRequired,
 };
 
 export default CarList;

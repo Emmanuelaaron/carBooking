@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { logOut } from '../Redux/Session/Session.js';
+import PropTypes from 'prop-types';
+import { logOut } from '../Redux/Session/Session';
 
 const LogOut = (props) => {
   const { text } = props;
@@ -22,5 +23,6 @@ const LogOut = (props) => {
     </button>
   );
 };
+LogOut.propTypes = { text: PropTypes.string.isRequired };
 
 export default LogOut;

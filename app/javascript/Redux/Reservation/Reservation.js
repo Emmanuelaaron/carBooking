@@ -24,7 +24,7 @@ export const fetchCarsNCities = () => async (dispatch) => {
     });
 };
 
-export const createReservation = (formData, setMessage) => async (dispatch) => {
+export const createReservation = (formData, setMessage) => async () => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://127.0.0.1:3000/api/v1/reservations/new', {
     method: 'POST',
@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
       return {
         cars: action.payload.cars,
         cities: action.payload.cities,
-        myReservations: action.payload.myReservations
+        myReservations: action.payload.myReservations,
       };
     case CREATE_RESERVATION:
       return state;

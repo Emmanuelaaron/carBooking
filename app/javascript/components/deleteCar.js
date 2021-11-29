@@ -17,7 +17,6 @@ const DeleteCars = () => {
     return null;
   }, []);
 
-  console.log(cars);
   return (
     <Row xs={1} md={4} className="g-4">
       {cars.map((car) => (

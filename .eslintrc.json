@@ -22,6 +22,8 @@
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "postcss.config.js",
+      "babel.config.js"
     ]
   }

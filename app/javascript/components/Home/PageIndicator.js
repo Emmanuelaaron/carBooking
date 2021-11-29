@@ -21,8 +21,8 @@ const PageIndicator = (props) => {
 };
 
 PageIndicator.propTypes = {
-  page: PropTypes.number,
-  Ppage: PropTypes.number,
-  cars: PropTypes.array,
+  page: PropTypes.number.isRequired,
+  Ppage: PropTypes.number.isRequired,
+  cars: PropTypes.arrayOf.isRequired,
 };
 export default PageIndicator;

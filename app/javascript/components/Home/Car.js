@@ -7,7 +7,7 @@ import googleplusImg from '../../Img/googleplus.png';
 const Car = (props) => {
   const { car, setdiplayCar } = props;
   const {
-    name, description, model, image_data,
+    name, description, model, imageData,
   } = car;
 
   return (
@@ -22,7 +22,8 @@ const Car = (props) => {
         >
           <img
             className="w-100"
-            src={image_data}
+            src={imageData}
+            alt={name}
           />
         </button>
       </div>
@@ -30,9 +31,9 @@ const Car = (props) => {
       <p className="text-center text-muted m-0">{name}</p>
       <p className="text-center text-muted m-0">{description}</p>
       <div className="d-flex flex-row justify-content-center align-items-center">
-        <a href="#" target="_blank"><img className="car-icons" src={twitterImg} /></a>
-        <a href="#" target="_blank"><img className="car-icons" src={facebookImg} /></a>
-        <a href="#" target="_blank"><img className="car-icons" src={googleplusImg} /></a>
+        <a href="/" target="_blank"><img className="car-icons" src={twitterImg} alt="icons" /></a>
+        <a href="/" target="_blank"><img className="car-icons" src={facebookImg} alt="icons" /></a>
+        <a href="/" target="_blank"><img className="car-icons" src={googleplusImg} alt="icons" /></a>
       </div>
     </div>
   );
@@ -43,9 +44,9 @@ Car.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
-    image_data: PropTypes.string.isRequired,
+    imageData: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
-  setdiplayCar: PropTypes.func,
+  setdiplayCar: PropTypes.func.isRequired,
 };
 export default Car;

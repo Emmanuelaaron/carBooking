@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Test extends React.Component {
-  render() {
-    return (
-      <>
-        Text:
-        {' '}
-        {this.props.text}
-      </>
-    );
-  }
-}
+const Test = (props) => {
+  const { text } = props;
+  return (
+    <>
+      Text:
+      {' '}
+      {text}
+    </>
+  );
+};
 
 Test.propTypes = {
-  text: PropTypes.node,
+  text: PropTypes.node.isRequired,
 };
 export default Test;

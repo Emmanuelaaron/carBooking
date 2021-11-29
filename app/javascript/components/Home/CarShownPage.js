@@ -8,22 +8,22 @@ import triangleArrow from '../../Img/triangle-arrow.png';
 
 const CarShownPage = (props) => {
   const { car, display, setdiplayCar } = props;
-  console.log(car);
   let ans = <></>;
   if (car) {
     const {
-      name, description, model, price, id, image_data,
+      name, description, model, price, id, imageData,
     } = car;
     ans = (
       <div className={`position-absolute p-0 m-0 position-relative bg-white ${display ? 'show-car' : 'hide-car'}`}>
         <button type="button" className="backBtn" onClick={() => setdiplayCar({ car, display: false })}>
-          <img className="Btnicon" src={triangleArrow} />
+          <img className="Btnicon" src={triangleArrow} alt="icon" />
         </button>
         <Row className="m-0 h-100 w-100">
           <div className="col-12 col-md-8 d-flex flex-column justify-content-center">
             <img
               className="w-100"
-              src={image_data}
+              src={imageData}
+              alt={name}
             />
           </div>
           <div className="col-12 col-md-4 text-center d-flex flex-column justify-content-center">
@@ -50,7 +50,7 @@ const CarShownPage = (props) => {
               <p className="text-center fs-3">You like it?</p>
               <NavLink to={`/reservation/${id}`} className="ReserveBtn">
                 Reserve It
-                <img className="Btnicon" src={arrowRigth} />
+                <img className="Btnicon" src={arrowRigth} alt="icon" />
               </NavLink>
             </div>
           </div>
@@ -66,7 +66,7 @@ CarShownPage.propTypes = {
   car: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    image_data: PropTypes.string,
+    imageData: PropTypes.string,
     model: PropTypes.string,
     id: PropTypes.number,
     price: PropTypes.number,

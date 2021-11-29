@@ -30,8 +30,6 @@ export const fetchCreateUser = (username) => async (dispatch) => {
       if (data.code === 1) {
         dispatch(newSession(data));
       }
-    }).catch((error) => {
-      console.log(error);
     });
 };
 
@@ -45,12 +43,9 @@ export const loginUser = (username) => async (dispatch) => {
     redirect: 'follow',
   }).then((response) => response.json())
     .then((data) => {
-      console.log(data);
       if (data.code === 1) {
         dispatch(newSession(data));
       }
-    }).catch((error) => {
-      console.log(error);
     });
 };
 

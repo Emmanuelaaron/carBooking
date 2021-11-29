@@ -9,7 +9,7 @@ import { fetchCarsNCities, createReservation } from '../../Redux/Reservation/Res
 
 const ReservationForm = () => {
   const { id } = useParams();
-  let carid = parseInt(id);
+  let carid = parseInt(id, 10);
   if (id === 'new') {
     carid = '';
   }
@@ -35,14 +35,14 @@ const ReservationForm = () => {
   const updateCarId = (value) => {
     setReservationData((prevState) => ({
       ...prevState,
-      car_id: parseInt(value),
+      car_id: parseInt(value, 10),
     }));
   };
 
   const updateCityId = (value) => {
     setReservationData((prevState) => ({
       ...prevState,
-      city_id: parseInt(value),
+      city_id: parseInt(value, 10),
     }));
   };
 
@@ -78,7 +78,8 @@ const ReservationForm = () => {
         )}
         <h1 className="w-75 text-center mt-5 text-white fs-3 border-bottom border-white pb-2">RESERVE A CAR WITH JDE MOTORS</h1>
         <p className={`${styles.textFont} text-center text-white mb-3 mt-2`}>
-          Rent with confidence with JDE MOTORS. Find your city's closest reservation location and hit the road! We provide service for over
+          Rent with confidence with JDE MOTORS. Find your city&apos;s closest reservation
+          location and hit the road! We provide service for over
           {' '}
           {cities.length}
           {' '}

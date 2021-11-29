@@ -55,8 +55,9 @@ const Navbar = () => {
       <button
         className="d-md-none border-0 bg-transparent p-2 order-0"
         onClick={menuBtnHandler}
+        type="button"
       >
-        <img className="menuIcon" src={menuIcon} />
+        <img className="menuIcon" src={menuIcon} alt="icon" />
       </button>
       <p className="title mb-0 mt-4">JDE MOTORS</p>
       <div className="align-self-stretch w-100 ps-3 pt-3">
@@ -68,13 +69,13 @@ const Navbar = () => {
                   <li
                     className="nav-item"
                     key={link.id}
-                    onClick={() => setMenuStatus('d-none')}
                   >
                     <NavLink
                       className="fs-5 nav-link px-3"
                       to={link.path}
                       activeclassname="active"
                       exact="true"
+                      onClick={() => setMenuStatus('d-none')}
                     >
                       {link.text.toUpperCase()}
                     </NavLink>
@@ -91,11 +92,11 @@ const Navbar = () => {
       </div>
       <div className="m-0 d-none d-md-block order-md-3">
         <div className="m-0 d-flex flex-row justify-content-around">
-          <a href="#" target="_blank"><img className="nav-icons" src={twitterImg} /></a>
-          <a href="#" target="_blank"><img className="nav-icons" src={facebookImg} /></a>
-          <a href="#" target="_blank"><img className="nav-icons" src={googleplusImg} /></a>
-          <a href="#" target="_blank"><img className="nav-icons" src={vimeoImg} /></a>
-          <a href="#" target="_blank"><img className="nav-icons" src={pinterestImg} /></a>
+          <a href="/" target="_blank"><img className="nav-icons" alt="icon" src={twitterImg} /></a>
+          <a href="/" target="_blank"><img className="nav-icons" alt="icon" src={facebookImg} /></a>
+          <a href="/" target="_blank"><img className="nav-icons" alt="icon" src={googleplusImg} /></a>
+          <a href="/" target="_blank"><img className="nav-icons" alt="icon" src={vimeoImg} /></a>
+          <a href="/" target="_blank"><img className="nav-icons" alt="icon" src={pinterestImg} /></a>
         </div>
         <p className="m-0 d-none d-md-block text-muted">© 2021 Microverse & C.S.P.A</p>
       </div>
