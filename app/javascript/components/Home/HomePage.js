@@ -10,7 +10,7 @@ const HomePage = () => {
   const { cars } = useSelector((state) => state);
   const dispatch = useDispatch();
   const loadCarsBind = bindActionCreators(fetchCars, dispatch);
-  const [ diplayCar, setdiplayCar ] = useState({ car: null, display: false });
+  const [diplayCar, setdiplayCar] = useState({ car: null, display: false });
 
   useEffect(() => {
     loadCarsBind();
@@ -22,10 +22,12 @@ const HomePage = () => {
   );
 
   if (cars) {
-    ans = <div className="m-0 p-0 position-relative container-fluid home-container">
-      <CarList cars={cars} setdiplayCar={setdiplayCar} />
-      <CarShownPage car={diplayCar.car} display={diplayCar.display} setdiplayCar={setdiplayCar} />
-    </div>;
+    ans = (
+      <div className="m-0 p-0 position-relative container-fluid home-container">
+        <CarList cars={cars} setdiplayCar={setdiplayCar} />
+        <CarShownPage car={diplayCar.car} display={diplayCar.display} setdiplayCar={setdiplayCar} />
+      </div>
+    );
   }
 
   return ans;

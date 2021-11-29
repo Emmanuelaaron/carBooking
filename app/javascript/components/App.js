@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../Style.css';
 
 const App = () => (
-  <Provider store={Store} >
+  <Provider store={Store}>
     <Session />
   </Provider>
 );

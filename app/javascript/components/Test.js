@@ -1,16 +1,18 @@
-import React from "react"
-import PropTypes from "prop-types"
-class Test extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Text: {this.props.text}
-      </React.Fragment>
-    );
-  }
-}
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Test = (props) => {
+  const { text } = props;
+  return (
+    <>
+      Text:
+      {' '}
+      {text}
+    </>
+  );
+};
 
 Test.propTypes = {
-  text: PropTypes.node
+  text: PropTypes.node.isRequired,
 };
-export default Test
+export default Test;
