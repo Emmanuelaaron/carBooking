@@ -16,7 +16,8 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     @cities = City.all
     @cars = Car.all
-    render json: { cities: @cities, cars: @cars, code: 200 }
+    @myReservations = Reservation.all
+    render json: {cities: @cities, cars: @cars, code: 200, myReservations: @myReservations }
   end
 
   private

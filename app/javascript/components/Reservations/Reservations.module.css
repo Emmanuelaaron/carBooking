@@ -14,14 +14,10 @@
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
 .subtitle {
   font-size: 0.8rem;
-}
-
-table {
-  margin-top: 25px;
 }
