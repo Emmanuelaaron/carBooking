@@ -46,7 +46,8 @@ const reducer = (state = initialState, action) => {
     case FETCH_CARS_N_CITIES:
       return {
         cars: action.payload.cars,
-        cities: action.payload.cities
+        cities: action.payload.cities,
+        myReservations: action.payload.myReservations
       };
     case CREATE_RESERVATION:
       return state;
