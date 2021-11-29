@@ -23,6 +23,20 @@ class Api::V1::CarsController < ApplicationController
     end
   end
 
+  def destroy
+    @car = Car.find_by(id: params[:id])
+    if @car
+      @car.destroy
+      render json: {
+        message: 'Car deleted succesfully'
+      }
+    else
+      render json: {
+        message: 'Car does not exist'
+      }
+    end
+  end
+
   private
 
   def cars_params

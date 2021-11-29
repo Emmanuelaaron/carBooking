@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post '/newcar', to: "cars#create"
       get '/carsNcities', to: "reservations#index"
       post '/reservations/new', to: "reservations#create"
+      delete '/cars/:id', to: "cars#destroy"
     end
   end
 
