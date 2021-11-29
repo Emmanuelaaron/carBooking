@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCarsNCities } from '../../Redux/Reservation/Reservation';
 import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
+import { style } from 'dom-helpers';
 
 function Reservations() {
   const { cars, cities, myReservations } = useSelector((state) => state.reservations)
@@ -33,33 +34,29 @@ function Reservations() {
     result =
       <div className={styles.container}>
         <h2 className={styles.title}>My Cars Reservations</h2>
-
-        <table>
-          <caption className={styles.subtitle}>This is a list of all the cars you have reserve</caption>
-          <thead>
-            <tr>
-              <th>Car Model</th>
-              <th>Date of Reservation</th>
-              <th>City of Reservation</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              myReservations.map(reservation => {
-                const car = cars.find((car) => car.id === reservation.car_id);
-                const city = cities.find((city) => city.id === reservation.city_id);
-                const date = reservation.date;
-                return (
-                  <tr key={reservation.id}>
-                    <th>{car.model}</th>
-                    <th>{date}</th>
-                    <th>{city.name}</th>
-                  </tr>
-                )
-              })
+        <ul className={styles.list}>
+          { myReservations.map(reservation => {
+            const car = cars.find((car) => car.id === reservation.car_id);
+            const city = cities.find((city) => city.id === reservation.city_id);
+            const date = reservation.date;
+            return (
+              <li key={reservation.id} className={styles.rows}>
+                <div className={styles.imageContainer}>
+                  <img className={styles.carImg} src={car.image_data}/>
+                  <p className={styles.carName}>{car.name}: {car.model}</p>
+                </div>
+                <div className={styles.infoContainer}>
+                    <p className={styles.header}>Date of reservation</p>
+                    <p className={styles.info}>{date}</p>
+                    <p className={styles.header}>City of reservation</p>
+                    <p className={styles.info}>{city.name}</p>
+                </div>
+              </li>
+              )
             }
-          </tbody>
-        </table>
+          )}
+        </ul>
+        <p className={styles.subtitle}>This is a list of all the cars you have reserve</p>
       </div>
   }
 

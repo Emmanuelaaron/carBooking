@@ -6,6 +6,7 @@
 
 .container {
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,10 +15,70 @@
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   font-weight: 700;
+  margin-bottom: 20px;
+  color: #97bf11;
+  margin-top: 15px;
+}
+
+.list {
+  list-style: none;
+  padding: 0 5%;
+  margin: 0;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .subtitle {
   font-size: 0.8rem;
+  text-align: center;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border: 1px solid #97bf11;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0px #b6b6b687;
+  margin: 15px 0;
+  height: 150px;
+}
+
+.rows p {
+  margin: 0;
+}
+
+.carName {
+  color: #97bf11;
+  font-weight: bold;
+}
+
+.imageContainer {
+  margin:auto;
+}
+
+.carImg {
+  width: 50%;
+  height: 80%;
+}
+
+.infoContainer {
+  margin: auto;
+  width: 75%;
+}
+
+.header {
+  font-weight: bold;
+  background-color: rgb(191, 191, 191);
+}
+
+.info {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 85vh;
+  }
 }
