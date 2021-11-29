@@ -26,13 +26,13 @@ export const fetchCreateUser = (username) => async (dispatch) => {
     }),
     redirect: 'follow',
   }).then((response) => response.json())
-  .then((data) => {
-    if (data.code === 1){
-      dispatch(newSession(data));
-    }
-  }).catch((error) => {
-    console.log(error);
-  });
+    .then((data) => {
+      if (data.code === 1) {
+        dispatch(newSession(data));
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
 };
 
 export const loginUser = (username) => async (dispatch) => {
@@ -43,17 +43,15 @@ export const loginUser = (username) => async (dispatch) => {
       username,
     }),
     redirect: 'follow',
-  }).then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-    if (data.code === 1){
-      dispatch(newSession(data));
-    }
-  }).catch((error) => {
-    console.log(error);
-  });
+  }).then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (data.code === 1) {
+        dispatch(newSession(data));
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
 };
 
 const saveSessionLocally = (data) => {

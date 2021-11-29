@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {
+  Form, Button, Container, Row, Col,
+} from 'react-bootstrap';
 import { fetchCreateUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
 
@@ -19,7 +21,7 @@ const SignUp = () => {
   };
 
   const inputEnterSubmit = (e) => {
-    if (e.key === 'Enter'){
+    if (e.key === 'Enter') {
       createUserAction(userInp);
     }
   };
@@ -47,7 +49,7 @@ const SignUp = () => {
           </Form>
         </Col>
       </Row>
-    </ Container>
+    </Container>
   );
 };
 

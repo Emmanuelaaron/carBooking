@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {
+  Form, Button, Container, Row, Col,
+} from 'react-bootstrap';
 import { loginUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
 
@@ -19,7 +21,7 @@ const Login = () => {
   };
 
   const inputEnterSubmit = (e) => {
-    if (e.key === 'Enter'){
+    if (e.key === 'Enter') {
       loginUserAction(userInp);
     }
   };
@@ -31,7 +33,7 @@ const Login = () => {
           <img src={logo} className="w-100" />
         </Col>
         <Col md="6">
-          <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()} >
+          <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()}>
             <Form.Label className="fs-1 text-center">Login:</Form.Label>
             <Form.Group className="mb-3 d-flex">
               <Form.Control
@@ -41,8 +43,8 @@ const Login = () => {
                 onKeyUp={(e) => inputEnterSubmit(e)}
               />
               <Button variant="success" className="align-self-end" type="button" onClick={loginUserBtnHandler}>
-              Login
-            </Button>
+                Login
+              </Button>
             </Form.Group>
           </Form>
         </Col>

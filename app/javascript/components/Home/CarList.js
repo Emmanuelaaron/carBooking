@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-bootstrap';
 import Car from './Car';
 import HomeAbuttons from './HomeAbuttons';
@@ -39,16 +39,16 @@ const CarList = (props) => {
           <div className="d-none d-md-block slider-container">
             <div
               className="slider car-list"
-              style={{transform: `translateX(-${page * 100}%)`, transition: "transform 0.3s ease-out"}}
+              style={{ transform: `translateX(-${page * 100}%)`, transition: 'transform 0.3s ease-out' }}
             >
               {
-                cars.map((car) => {
-                  return <Car
+                cars.map((car) => (
+                  <Car
                     key={car.id}
                     car={car}
                     setdiplayCar={setdiplayCar}
-                  />;
-                })
+                  />
+                ))
               }
             </div>
           </div>
@@ -56,16 +56,16 @@ const CarList = (props) => {
           <div className="d-md-none slider-container md-car-container-a">
             <div
               className="slider md-car-container-b"
-              style={{transform: `translateX(-${Ppage * 100}%)`, transition: "transform 0.3s ease-out"}}
+              style={{ transform: `translateX(-${Ppage * 100}%)`, transition: 'transform 0.3s ease-out' }}
             >
               {
-                cars.map((car, index) => {
-                  return <Car
+                cars.map((car, index) => (
+                  <Car
                     key={car.id}
                     car={car}
                     setdiplayCar={setdiplayCar}
-                  />;
-                })
+                  />
+                ))
               }
             </div>
           </div>
@@ -85,11 +85,11 @@ const CarList = (props) => {
       />
     </Row>
   );
-}
+};
 
 CarList.propTypes = {
   cars: PropTypes.array,
-  setdiplayCar: PropTypes.func
+  setdiplayCar: PropTypes.func,
 };
 
 export default CarList;

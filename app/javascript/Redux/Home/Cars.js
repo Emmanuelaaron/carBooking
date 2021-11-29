@@ -1,6 +1,6 @@
 const LOAD_CARS = 'CARS/HOME/LOAD_CARS';
 
-let initialState = [];
+const initialState = [];
 
 export const saveCars = (payload) => ({
   type: LOAD_CARS,
@@ -8,25 +8,23 @@ export const saveCars = (payload) => ({
 });
 
 export const fetchCars = () => async (dispatch) => {
-
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://localhost:3000/api/v1/home', {
     method: 'GET',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: token
+      Authorization: token,
     },
   }).then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    if (data.code === 200){
-      dispatch(saveCars(data.cars));
-    }
-  }).catch((error) => {
-    console.log(error);
-  });
+    .then((data) => {
+      console.log(data);
+      if (data.code === 200) {
+        dispatch(saveCars(data.cars));
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
 };
-
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {

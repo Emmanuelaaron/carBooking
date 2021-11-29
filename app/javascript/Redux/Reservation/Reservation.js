@@ -12,33 +12,33 @@ export const fetchCarsNCities = () => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://127.0.0.1:3000/api/v1/carsNcities', {
     method: 'GET',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: token
+      Authorization: token,
     },
   }).then((response) => response.json())
-  .then((data) => {
-    if (data.code === 200){
-      dispatch(saveData(data));
-    }
-  })
+    .then((data) => {
+      if (data.code === 200) {
+        dispatch(saveData(data));
+      }
+    });
 };
 
 export const createReservation = (formData, setMessage) => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch('http://127.0.0.1:3000/api/v1/reservations/new', {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
-      Authorization: token
+      Authorization: token,
     },
     body: JSON.stringify(formData),
   }).then((response) => response.json())
-  .then((data) => {
-    if(data.code === 201) {
-      setMessage("Reservation created")
-    }
-  })
+    .then((data) => {
+      if (data.code === 201) {
+        setMessage('Reservation created');
+      }
+    });
 };
 
 const reducer = (state = initialState, action) => {

@@ -1,13 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import facebookImg from '../../Img/facebook.png';
 import twitterImg from '../../Img/twitter.png';
 import googleplusImg from '../../Img/googleplus.png';
 
 const Car = (props) => {
   const { car, setdiplayCar } = props;
-  const { name, description, model, image_data } = car;
-  
+  const {
+    name, description, model, image_data,
+  } = car;
+
   return (
     <div
       className="col-12 col-md-4"
@@ -16,10 +18,11 @@ const Car = (props) => {
         <button
           className="border-0 bg-transparent"
           type="button"
-          onClick={() => setdiplayCar({car, display: true})}
+          onClick={() => setdiplayCar({ car, display: true })}
         >
           <img
-            className="w-100" src={image_data}
+            className="w-100"
+            src={image_data}
           />
         </button>
       </div>
@@ -33,7 +36,7 @@ const Car = (props) => {
       </div>
     </div>
   );
-}
+};
 
 Car.propTypes = {
   car: PropTypes.shape({
@@ -41,8 +44,8 @@ Car.propTypes = {
     description: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
     image_data: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
   }).isRequired,
-  setdiplayCar: PropTypes.func
+  setdiplayCar: PropTypes.func,
 };
 export default Car;
