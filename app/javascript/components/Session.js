@@ -7,11 +7,20 @@ import Navbar from './Navbar';
 import ReservationForm from './reservationForm/ReservationForm';
 import HomePage from './Home/HomePage';
 import AddCar from './AddCar';
-
+import NotificationContainer from './notifications/NotificationsContainer';
 
 const Session = () => {
-  const currentSession = useSelector((state) => state.session);
+  const { session } = useSelector((state) => state);
   const [logNsign, setlogNsign] = useState(true);
+  const [ notifications, setNotifications ] = useState([]);
+
+  const addNotification = (message) => {
+    setNotifications([...notifications, { id:notifications.length, message }]);
+  }
+
+  const closeNotification = (id) => {
+    setNotifications([...notifications.filter((notification) => notification.id !== id)]);
+  };
 
   const buttonActionHandle = () => {
     setlogNsign(!logNsign);
@@ -25,7 +34,7 @@ const Session = () => {
         >
           {
             logNsign
-              ? <Login />
+              ? <Login addNotification={addNotification} />
               : <SignUp />
           }
           <button className="link-info bg-transparent border-0" type="button" onClick={buttonActionHandle}>
@@ -36,18 +45,19 @@ const Session = () => {
     </div>
   );
 
-  if (currentSession.session) {
+  if (session.active) {
     ans = (
       <Router>
         <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
-        <Navbar/>
-        <Routes >
-          <Route path="/reservation/:id" element={< ReservationForm />} />
-          <Route exact path="/" element={<HomePage />} />
-          <Route path="/reservations" element={<p>Reservations!!</p>} />
-          <Route path="/newcar" element={<AddCar />} />
-          <Route path="/deletecar" element={<p>Delete Car!!</p>} />
-        </Routes>
+          <Navbar/>
+          <Routes >
+            <Route path="/reservation/:id" element={< ReservationForm />} />
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/reservations" element={<p>Reservations!!</p>} />
+            <Route path="/newcar" element={<AddCar />} />
+            <Route path="/deletecar" element={<p>Delete Car!!</p>} />
+          </Routes>
+          <NotificationContainer notifications={notifications} closeNotification={closeNotification} />
         </div>
       </Router>
     );

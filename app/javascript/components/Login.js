@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import { loginUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
 
-const Login = () => {
+const Login = (props) => {
+  const { addNotification } = props;
   const [userInp, setUserInp] = useState('');
   const dispatch = useDispatch();
   const loginUserAction = bindActionCreators(loginUser, dispatch);
@@ -15,12 +17,12 @@ const Login = () => {
   };
 
   const loginUserBtnHandler = () => {
-    loginUserAction(userInp);
+    loginUserAction(userInp, addNotification);
   };
 
   const inputEnterSubmit = (e) => {
     if (e.key === 'Enter'){
-      loginUserAction(userInp);
+      loginUserAction(userInp, addNotification);
     }
   };
 
@@ -49,6 +51,10 @@ const Login = () => {
       </Row>
     </Container>
   );
+};
+
+Login.propTypes = {
+  addNotification: PropTypes.func
 };
 
 export default Login;
