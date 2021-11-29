@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Form, Container, Button } from 'react-bootstrap';
-import { addCar } from '../Redux/Car/addCar';
+import addCar from '../Redux/Car/addCar';
 
 const AddCar = () => {
   const dispatch = useDispatch();

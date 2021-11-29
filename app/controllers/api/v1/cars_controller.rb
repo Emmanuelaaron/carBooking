@@ -18,7 +18,8 @@ class Api::V1::CarsController < ApplicationController
       }
     else
       render json: {
-        message: @car.errors.messages
+        message: @car.errors.messages,
+        code: 417
       }
     end
   end

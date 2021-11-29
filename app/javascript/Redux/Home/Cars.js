@@ -1,5 +1,5 @@
 const LOAD_CARS = 'CARS/HOME/LOAD_CARS';
-const DELETE_CAR = 'CARS/DELETE_CAR'
+const DELETE_CAR = 'CARS/DELETE_CAR';
 
 const initialState = [];
 
@@ -11,7 +11,7 @@ export const saveCars = (payload) => ({
 export const deleteCar = (id) => ({
   type: DELETE_CAR,
   id,
-})
+});
 
 export const fetchCars = () => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
@@ -41,22 +41,20 @@ export const removeCar = (id) => async (dispatch) => {
       Authorization: token,
     },
   }).then((response) => response.json())
-  .then((data) => {
-    if(data.code === 202){
-      dispatch(deleteCar(id))
-    }
-  })
-}
+    .then((data) => {
+      if (data.code === 202) {
+        dispatch(deleteCar(id));
+      }
+    });
+};
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_CARS:
       return action.payload;
     case DELETE_CAR:
-      const newSstate = state.filter((car) => {
-        return car.id !== action.id
-      })
-      return newSstate
+      const newSstate = state.filter((car) => car.id !== action.id);
+      return newSstate;
     default:
       return state;
   }
