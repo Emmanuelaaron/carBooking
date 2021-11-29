@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import ReservationForm from './reservationForm/ReservationForm';
 import HomePage from './Home/HomePage';
 import AddCar from './AddCar';
+import MyReservations from './Reservations/MyReservations'
 
 
 const Session = () => {
@@ -44,7 +45,7 @@ const Session = () => {
         <Routes >
           <Route path="/reservation/:id" element={< ReservationForm />} />
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/reservations" element={<p>Reservations!!</p>} />
+          <Route path="/reservations" element={< MyReservations />} />
           <Route path="/newcar" element={<AddCar />} />
           <Route path="/deletecar" element={<p>Delete Car!!</p>} />
         </Routes>
