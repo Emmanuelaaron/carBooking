@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Form, Container, Button } from 'react-bootstrap'
 import { addCar } from '../Redux/Car/addCar'
 
-const AddCar = () => {
-  const dispatch = useDispatch()
-  const addCarAction = bindActionCreators(addCar, dispatch)
+const AddCar = (props) => {
+  const dispatch = useDispatch();
+  const addCarAction = bindActionCreators(addCar, dispatch);
+  const { addNotification } = props;
 
   const [name, setName] = useState('')
   const [model, setModel] = useState('')
@@ -44,7 +46,7 @@ const AddCar = () => {
     form.append('image', imgInp)
     
 
-    addCarAction(form)
+    addCarAction(form, addNotification)
     setName('')
     setModel('')
     setDescription('')
@@ -97,4 +99,8 @@ const AddCar = () => {
   )
 }
 
-export default AddCar
+AddCar.propTypes = {
+  addNotification: PropTypes.func
+};
+
+export default AddCar;

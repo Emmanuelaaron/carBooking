@@ -51,10 +51,10 @@ const Session = () => {
         <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
           <Navbar/>
           <Routes >
-            <Route path="/reservation/:id" element={< ReservationForm />} />
+            <Route path="/reservation/:id" element={< ReservationForm addNotification={addNotification} />} />
             <Route exact path="/" element={<HomePage />} />
             <Route path="/reservations" element={<p>Reservations!!</p>} />
-            <Route path="/newcar" element={<AddCar />} />
+            <Route path="/newcar" element={<AddCar addNotification={addNotification}/>} />
             <Route path="/deletecar" element={<p>Delete Car!!</p>} />
           </Routes>
           <NotificationContainer notifications={notifications} closeNotification={closeNotification} />

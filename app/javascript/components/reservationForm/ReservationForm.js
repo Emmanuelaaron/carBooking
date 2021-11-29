@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -7,8 +8,9 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { fetchCarsNCities, createReservation } from '../../Redux/Reservation/Reservation'
 import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
 
-const ReservationForm = () =>{ 
+const ReservationForm = (props) =>{ 
   const { id } = useParams();
+  const { addNotification } = props;
   let carid = parseInt(id);
   if(id === "new") {
     carid = ""
@@ -17,7 +19,6 @@ const ReservationForm = () =>{
   const dispatch = useDispatch();
   const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
   const sendFormData = bindActionCreators(createReservation, dispatch);
-  const [message, setMessage] = useState(null);
 
   const [reservationData, setReservationData]  = useState({
     date: new Date().toISOString().slice(0, 10),
@@ -48,7 +49,7 @@ const ReservationForm = () =>{
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    sendFormData(reservationData, setMessage);
+    sendFormData(reservationData, addNotification);
   }
 
   useEffect(() => {
@@ -69,12 +70,6 @@ const ReservationForm = () =>{
   if (cars && cities) {
     result = 
     <div className={styles.container + " d-flex flex-column justify-content-center align-items-center"} id="reservationForm-container">
-      { message != null &&
-        <Alert variant="success" className="text-center">
-          <Alert.Heading>{message}</Alert.Heading>
-          <p>Your car was successfully reserved.</p>
-        </Alert>
-      }
       <h1 className="w-75 text-center mt-5 text-white fs-3 border-bottom border-white pb-2">RESERVE A CAR WITH JDE MOTORS</h1>
       <p className= {styles.textFont + " text-center text-white mb-3 mt-2"}>
         Rent with confidence with JDE MOTORS. Find your city's closest reservation location and hit the road! We provide service for over {cities.length} cities. No hidden fees.
@@ -112,5 +107,9 @@ const ReservationForm = () =>{
   }
   return result;
 }
+
+ReservationForm.propTypes = {
+  addNotification: PropTypes.func
+};
 
 export default ReservationForm;
