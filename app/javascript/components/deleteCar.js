@@ -22,7 +22,7 @@ const DeleteCars = () => {
   return (
     <Row xs={1} md={4} className="g-4">
       {cars.map((car) => (
-        <Col key={car.id}>
+        <Col key={car.id} >
           <Card className="card-body">
             <Card.Img variant="top" src={car.image_data} />
             <Card.Body className="d-flex justify-content-between align-items-center">
