@@ -35,7 +35,7 @@ const Session = () => {
           {
             logNsign
               ? <Login addNotification={addNotification} />
-              : <SignUp />
+              : <SignUp addNotification={addNotification}/>
           }
           <button className="link-info bg-transparent border-0" type="button" onClick={buttonActionHandle}>
             { logNsign ? 'Sign Up' : 'Log In' }

@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types";
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
 import { fetchCreateUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [userInp, setUserInp] = useState('');
   const dispatch = useDispatch();
   const createUserAction = bindActionCreators(fetchCreateUser, dispatch);
+  const { addNotification } = props;
 
   const UpdateUserInp = (value) => {
     setUserInp(value);
   };
 
   const createUserBtnHandler = () => {
-    createUserAction(userInp);
+    createUserAction(userInp, addNotification);
   };
 
   const inputEnterSubmit = (e) => {
     if (e.key === 'Enter'){
-      createUserAction(userInp);
+      createUserAction(userInp, addNotification);
     }
   };
 
@@ -49,6 +51,10 @@ const SignUp = () => {
       </Row>
     </ Container>
   );
+};
+
+SignUp.propTypes = {
+  addNotification: PropTypes.func
 };
 
 export default SignUp;

@@ -24,11 +24,11 @@ export const fetchCreateUser = (username, addNotification) => async (dispatch) =
     body: JSON.stringify({
       username,
     }),
-    redirect: 'follow',
   }).then((response) => response.json())
   .then((data) => {
+    console.log(data);
     if (data.code === 200){
-      addNotification('Looged succesfully, Welcome back ' + username + '!');
+      addNotification(data.message);
       dispatch(newSession(data));
     }
   }).catch((error) => {
@@ -48,8 +48,9 @@ export const loginUser = (username, addNotification) => async (dispatch) => {
     return response.json();
   })
   .then((data) => {
-    if (data.code === 200){
-      addNotification('Loged succesfully, Welcome back ' + username + '!');
+    console.log(data);
+    if (data.code  === 200){
+      addNotification(data.message);
       dispatch(newSession(data));
     }
   }).catch((error) => {
