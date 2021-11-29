@@ -18,7 +18,7 @@ class Api::V1::ReservationsController < ApplicationController
     @cars = Car.all
     @cars.map { |car| car[:image_data] = car.image_url }
     @myReservations = Reservation.all
-    render json: {cities: @cities, cars: @cars, code: 200, myReservations: @myReservations }
+    render json: { cities: @cities, cars: @cars, code: 200, myReservations: @myReservations }
   end
 
   private

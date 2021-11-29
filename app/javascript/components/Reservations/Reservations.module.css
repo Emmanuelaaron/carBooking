@@ -40,7 +40,7 @@
   grid-template-columns: 2fr 3fr;
   border: 1px solid #97bf11;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 0px #b6b6b687;
+  box-shadow: 5px 5px 5px 0 #b6b6b687;
   margin: 15px 0;
   height: 150px;
 }
@@ -55,7 +55,7 @@
 }
 
 .imageContainer {
-  margin:auto;
+  margin: auto;
 }
 
 .carImg {
