@@ -16,12 +16,6 @@ const AddCar = () => {
     imgInp: new FormData(),
   });
 
-  // const [name, setName] = useState('');
-  // const [model, setModel] = useState('');
-  // const [description, setDescription] = useState('');
-  // const [price, setPrice] = useState('');
-  // const [imgInp, setImgInput] = useState(new FormData());
-
   const changeName = (e) => {
     setCarData((prevState) => ({
       ...prevState,
@@ -65,12 +59,8 @@ const AddCar = () => {
     form.append('description', carData.description)
     form.append('price', carData.price)
     form.append('image', carData.imgInp)
-    console.log('cardata.name', carData.name);
-    console.log('form', form);
     addCarAction(form);
   };
-
- 
 
   return (
     <Container>
