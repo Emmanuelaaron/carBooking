@@ -13,6 +13,11 @@ RSpec.describe 'Cars', type: :request do
            headers: { Authorization: @token }
     end
 
+    it 'return token missing if token not sent' do
+      get '/api/v1/home', params: {}
+      expect(JSON.parse(response.body)['code']).to eq(404)
+    end
+
     it 'return all the cars after validation token' do
       get '/api/v1/home', params: {}, headers: { Authorization: @token }
       expect(JSON.parse(response.body)['cars'].length).to eq(2)
