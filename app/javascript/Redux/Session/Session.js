@@ -27,7 +27,7 @@ export const fetchCreateUser = (username) => async (dispatch) => {
     redirect: 'follow',
   }).then((response) => response.json())
     .then((data) => {
-      if (data.code === 1) {
+      if (data.code === 200) {
         dispatch(newSession(data));
       }
     });
@@ -43,7 +43,7 @@ export const loginUser = (username) => async (dispatch) => {
     redirect: 'follow',
   }).then((response) => response.json())
     .then((data) => {
-      if (data.code === 1) {
+      if (data.code === 200) {
         dispatch(newSession(data));
       }
     });
