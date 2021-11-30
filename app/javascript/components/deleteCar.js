@@ -5,6 +5,7 @@ import {
   Row, Col, Card, Button,
 } from 'react-bootstrap';
 import { fetchCars, removeCar } from '../Redux/Home/Cars';
+import Loading from './Loading';
 
 const DeleteCars = () => {
   const dispatch = useDispatch();
@@ -14,23 +15,25 @@ const DeleteCars = () => {
 
   useEffect(() => {
     fetchCarAction();
-    return null;
   }, []);
 
   return (
-    <Row xs={1} md={4} className="g-4">
-      {cars.map((car) => (
-        <Col key={car.id}>
-          <Card className="card-body">
-            <Card.Img variant="top" src={car.imageData} />
-            <Card.Body className="d-flex justify-content-between align-items-center">
-              <Card.Title>{car.name}</Card.Title>
-              <Button variant="danger" onClick={() => removeCarAction(car.id)}>Delete</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    (cars.length > 0) ?
+      <Row xs={1} md={4} className="g-4">
+        {cars.map((car) => (
+          <Col key={car.id}>
+            <Card className="card-body">
+              <Card.Img variant="top" src={car.imageData} />
+              <Card.Body className="d-flex justify-content-between align-items-center">
+                <Card.Title>{car.name}</Card.Title>
+                <Button variant="danger" onClick={() => removeCarAction(car.id)}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    :
+    <Loading />
   );
 };
 
