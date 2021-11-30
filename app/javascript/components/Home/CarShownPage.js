@@ -5,16 +5,18 @@ import { NavLink } from 'react-router-dom';
 import './CarShow.css';
 import arrowRigth from '../../Img/arrow-right.png';
 import triangleArrow from '../../Img/triangle-arrow.png';
+import Loading from '../Loading';
 
 const CarShownPage = (props) => {
   const { car, display, setdiplayCar } = props;
-  let ans = <></>;
-  if (car) {
-    const {
-      name, description, model, price, id, imageData,
-    } = car;
-    ans = (
-      <div className={`position-absolute p-0 m-0 position-relative bg-white ${display ? 'show-car' : 'hide-car'}`}>
+
+  const {
+    name, description, model, price, id, imageData,
+  } = (car ? car : { name: "", description: "", model: "", price: "", id: "", imageData:"" } );
+
+  return (
+    car ?
+    <div className={`position-absolute p-0 m-0 position-relative bg-white ${display ? 'show-car' : 'hide-car'}`}>
         <button type="button" className="backBtn" onClick={() => setdiplayCar({ car, display: false })}>
           <img className="Btnicon" src={triangleArrow} alt="icon" />
         </button>
@@ -56,10 +58,9 @@ const CarShownPage = (props) => {
           </div>
         </Row>
       </div>
-    );
-  }
-
-  return ans;
+    :
+      <Loading />
+  );
 };
 
 CarShownPage.propTypes = {
