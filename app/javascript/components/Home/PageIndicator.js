@@ -23,6 +23,6 @@ const PageIndicator = (props) => {
 PageIndicator.propTypes = {
   page: PropTypes.number.isRequired,
   Ppage: PropTypes.number.isRequired,
-  cars: PropTypes.arrayOf.isRequired,
+  cars: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default PageIndicator;

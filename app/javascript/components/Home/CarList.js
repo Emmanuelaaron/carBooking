@@ -88,7 +88,7 @@ const CarList = (props) => {
 };
 
 CarList.propTypes = {
-  cars: PropTypes.arrayOf.isRequired,
+  cars: PropTypes.arrayOf(PropTypes.object).isRequired,
   setdiplayCar: PropTypes.func.isRequired,
 };
 
