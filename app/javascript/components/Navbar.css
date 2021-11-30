@@ -29,12 +29,11 @@
 }
 
 @media (max-width: 768px) {
-
   .title {
     font-family: 'Praise', Arial, Helvetica, sans-serif;
     transform: rotate(-10deg);
     font-size: 20px;
-    color:#ffffff;
+    color: #fff;
     margin: 0 10px;
     border-radius: 50%;
   }
