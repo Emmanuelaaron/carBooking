@@ -59,9 +59,9 @@ const Navbar = () => {
       >
         <img className="menuIcon" src={menuIcon} alt="icon" />
       </button>
-      <p className="title mb-0 mt-4">JDE MOTORS</p>
-      <div className="align-self-stretch w-100 ps-3 pt-3">
-        <ul className={`${menuStatus ? 'show-menu-links' : 'hide-menu-links'} d-md-flex flex-md-column link-container m-0 ps-2`}>
+      <p className="title order-2 order-md-1 text-center">JDE MOTORS</p>
+      <div className="flex-md-fill w-100 ps-2 pt-3 order-1 order-md-2">
+        <ul className={`${ menuStatus ? 'show-menu-links' : 'hide-menu-links'} d-md-flex flex-md-column link-container m-0 ps-2`}>
           {
             menuLinks.map((link) => (
               link.id !== 6
@@ -75,7 +75,7 @@ const Navbar = () => {
                       to={link.path}
                       activeclassname="active"
                       exact="true"
-                      onClick={() => setMenuStatus('d-none')}
+                      onClick={() => setMenuStatus(false)}
                     >
                       {link.text.toUpperCase()}
                     </NavLink>

@@ -19,7 +19,25 @@
   display: flex;
 }
 
+.title {
+  font-family: 'Praise', Arial, Helvetica, sans-serif;
+  transform: rotate(-10deg);
+  font-size: 50px;
+  color: #97bf11;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
+  .title {
+    font-family: 'Praise', Arial, Helvetica, sans-serif;
+    transform: rotate(-10deg);
+    font-size: 20px;
+    color: #fff;
+    margin: 0 10px;
+    border-radius: 50%;
+  }
+
   .link-container {
     position: absolute;
     flex-direction: column;

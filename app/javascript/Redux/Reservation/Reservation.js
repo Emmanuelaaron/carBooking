@@ -10,7 +10,7 @@ export const saveData = (payload) => ({
 
 export const fetchCarsNCities = () => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
-  await fetch('http://127.0.0.1:3000/api/v1/carsNcities', {
+  await fetch('http://127.0.0.1:3000/api/v1/cars-and-cities', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

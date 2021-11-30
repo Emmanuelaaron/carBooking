@@ -4,11 +4,11 @@ Rails.application.routes.draw do
  
   namespace :api do
     namespace :v1 do
-      post '/newuser', to: "users#create"
+      post '/new-user', to: "users#create"
       post '/login', to: "users#login"
       get '/home', to: "cars#index"
-      post '/newcar', to: "cars#create"
-      get '/carsNcities', to: "reservations#index"
+      post '/new-car', to: "cars#create"
+      get '/cars-and-cities', to: "reservations#index"
       post '/reservations/new', to: "reservations#create"
       delete '/cars/:id', to: "cars#destroy"
     end

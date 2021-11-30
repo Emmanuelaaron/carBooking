@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PageIndicator = (props) => {
-  const { page, cars, Ppage } = props;
+  const { page, cars, smallViewPage } = props;
 
   return (
     <>
       <div className="d-md-none d-flex flex-row justify-content-center align-items-center">
         {
-          cars.map((car, index) => (<span key={car.id} className={((Ppage === index) ? 'dotActive' : 'dotIndicator')} />))
+          cars.map((car, index) => (<span key={car.id} className={((smallViewPage === index) ? 'dotActive' : 'dotIndicator')} />))
         }
       </div>
       <div className="d-none d-md-flex flex-row justify-content-center align-items-center">
@@ -22,7 +22,7 @@ const PageIndicator = (props) => {
 
 PageIndicator.propTypes = {
   page: PropTypes.number.isRequired,
-  Ppage: PropTypes.number.isRequired,
-  cars: PropTypes.arrayOf.isRequired,
+  smallViewPage: PropTypes.number.isRequired,
+  cars: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default PageIndicator;

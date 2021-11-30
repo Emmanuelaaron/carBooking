@@ -7,10 +7,28 @@
 
 html {
   height: 100vh;
+  margin: 0;
 }
 
 body {
   height: 100vh;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(252, 252, 252, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #97bf11;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #009ee2;
 }
 
 .overflow-x-hidden {
@@ -20,12 +38,6 @@ body {
 .page-container {
   display: flex;
   flex-direction: row;
-}
-
-.title {
-  font-family: 'Praise', Arial, Helvetica, sans-serif;
-  transform: rotate(-10deg);
-  font-size: 2rem;
 }
 
 .bg-session {
@@ -42,6 +54,7 @@ body {
 .navbar {
   height: 100vh;
   max-width: 20%;
+  min-width: 20%;
   width: 100%;
   font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-right: 1px solid #97bf11;
@@ -232,11 +245,6 @@ body {
   .active {
     background-color: #fff;
     color: #97bf11;
-  }
-
-  .title {
-    transform: rotate(-25deg);
-    color: #fff;
   }
 
   .home {

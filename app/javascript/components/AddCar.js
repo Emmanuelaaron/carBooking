@@ -8,47 +8,58 @@ const AddCar = () => {
   const dispatch = useDispatch();
   const addCarAction = bindActionCreators(addCar, dispatch);
 
-  const [name, setName] = useState('');
-  const [model, setModel] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [imgInp, setImgInput] = useState(new FormData());
+  const [carData, setCarData] = useState({
+    name: '',
+    model: '',
+    description: '',
+    price: '',
+    imgInp: new FormData(),
+  });
 
   const changeName = (e) => {
-    setName(e.target.value);
+    setCarData((prevState) => ({
+      ...prevState,
+      name: e.target.value
+    }));
   };
 
   const changeModel = (e) => {
-    setModel(e.target.value);
+    setCarData((prevState) => ({
+      ...prevState,
+      model: e.target.value
+    }));
   };
 
   const changeDescription = (e) => {
-    setDescription(e.target.value);
+    setCarData((prevState) => ({
+      ...prevState,
+      description: e.target.value
+    }));
   };
 
   const changePrice = (e) => {
-    setPrice(e.target.value);
+    setCarData((prevState) => ({
+      ...prevState,
+      price: e.target.value
+    }));
   };
 
   const setImgInp = (img) => {
-    setImgInput(img.files[0]);
+    setCarData((prevState) => ({
+      ...prevState,
+      imgInp: img.files[0]
+    }));
   };
 
   const submitCar = (e) => {
     e.preventDefault();
-    const form = new FormData();
-    form.append('name', name);
-    form.append('model', model);
-    form.append('description', description);
-    form.append('price', price);
-    form.append('image', imgInp);
-
+    const form = new FormData()
+    form.append('name', carData.name)
+    form.append('model', carData.model)
+    form.append('description', carData.description)
+    form.append('price', carData.price)
+    form.append('image', carData.imgInp)
     addCarAction(form);
-    setName('');
-    setModel('');
-    setDescription('');
-    setPrice('');
-    setPrice('');
   };
 
   return (

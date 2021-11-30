@@ -1,11 +1,10 @@
 class Api::V1::CarsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  # before_action :authorize_request
+  before_action :authorize_request
 
   def index
     @cars = Car.all
-    @cars.map { |car| car[:imageData] = car.image_url }
     render json: { cars: @cars, code: 200 }
   end
 

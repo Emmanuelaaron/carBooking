@@ -13,9 +13,9 @@ Our main features are:
 - Delete car that displays all the added cars and an option to delete each car.
 
 
-![screenshot](./imgs/reservations.png)  ![screenshot](./imgs/home page.png) ![screenshot](./imgs/reservationform.png) ![screenshot](./imgs/reservations.png)
+![screenshot](./imgs/login.png) ![screenshot](./imgs/reservationform.png) ![screenshot](./imgs/reservations.png) ![screenshot](./imgs/homePage.png) ![screenshot](./imgs/addCar.png)
 
-![screenshot](./imgs/add car.png)
+
 
 ## Built With
 
@@ -64,18 +64,18 @@ Then type on your terminal :
 ```
 bundle install
 ```
-With this you will install all dependencies por react and redux and also for rails. 
-This project saves the pictures using the cloudinary service. First you need to go to the cloudanary website and create and accounts, ist free. Then create a file and name it .env, the you need to typle the following information on it:
+With this, you will install all dependencies for React and Redux and also for rails. 
+This project saves the pictures using the Cloudinary service. First, you need to go to the Cloudinary website and create and accounts, ist free. Then create a file and name it .env, there you need to type the following information on it:
 ```
 CLOUD_NAME="cloud name"
 CLOUD_API_KEY="paste cloud key here"
-CLOUD_API_SECRET="paste the cloud api secret code here"
+CLOUD_API_SECRET="paste the cloud API secret code here"
 ```
-Without this file the app will not work, due to it save all the image file on cloudary and then gets the urp from then.
+Without this file, the app will not work, because saves all the image files on Cloudinary and then gets the URL from them.
 
-Now to run the server you need to run the rails server and the deve server. To do that firest type on the terminal:
+Now to run the server you need to run the rails server and the development server. To do that first type on the terminal:
 ```
-Rils s
+rails s
 ```
 Now on a new terminal type:
 ```
@@ -85,31 +85,31 @@ Now got to [localhost](localhost:3000/)
 You will see the login page first.
 
 ### API usage
-The backed is made with ruby on rails and this works as an API service alone. To use it you need to either create and account or login using:
+The backed is made with ruby on rails and this works as an API service alone. To use it you need to either create an account or log in using:
 ```
 localhost:3000/api/v1/newuser
 localhost:3000/api/v1/login
 ```
 
-You only need to send a username using the body and the api will return the token, you need to save this token in order for you to use any of the other remaining features on the API server.
+You only need to send a username using the body and the API will return the token, you need to save this token for you to use any of the other remaining features on the API server.
 
-We also include a home api code on:
+We also include a home API code on:
 ```
 localhost:3000/api/v1/home
 ```
 This will return all the cars added to the database.
 
-To create new revervations you will use the api:
+To create new reservations you will use the API:
 ```
 localhost:3000/api/v1/reservations/new
 ```
-You are only require to send:
+You are only required to send:
 - token
 - car_id
 - city_id
 - date
 
-To get all the cars again and cities at the same time you can user the api:
+To get all the cars again and cities at the same time you can use the API:
 ```
 localhost:3000/api/v1/carsNcities
 ```
@@ -117,7 +117,7 @@ To add new car use:
 ```
 localhost:3000/api/v1/newcar
 ```
-This require:
+This requires:
 - name
 - model
 - description

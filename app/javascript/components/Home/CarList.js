@@ -9,7 +9,7 @@ import PageIndicator from './PageIndicator';
 const CarList = (props) => {
   const { cars, setdiplayCar } = props;
   const [page, setPage] = useState(0);
-  const [Ppage, setPPage] = useState(0);
+  const [smallViewPage, setsmallViewPage] = useState(0);
 
   const pageLeftBtn = () => {
     setPage(page - 1);
@@ -19,12 +19,12 @@ const CarList = (props) => {
     setPage(page + 1);
   };
 
-  const leftPpage = () => {
-    setPPage(Ppage - 1);
+  const leftsmallViewPage = () => {
+    setsmallViewPage(smallViewPage - 1);
   };
 
-  const rigthPpage = () => {
-    setPPage(Ppage + 1);
+  const rigthsmallViewPage = () => {
+    setsmallViewPage(smallViewPage + 1);
   };
 
   return (
@@ -34,7 +34,7 @@ const CarList = (props) => {
           <div className="w-100 text-center">
             <h2>LATEST MODELS</h2>
             <p className="text-muted">Please select a model</p>
-            <PageIndicator page={page} Ppage={Ppage} cars={cars} />
+            <PageIndicator page={page} smallViewPage={smallViewPage} cars={cars} />
           </div>
           <div className="d-none d-md-block slider-container">
             <div
@@ -56,7 +56,7 @@ const CarList = (props) => {
           <div className="d-md-none slider-container md-car-container-a">
             <div
               className="slider md-car-container-b"
-              style={{ transform: `translateX(-${Ppage * 100}%)`, transition: 'transform 0.3s ease-out' }}
+              style={{ transform: `translateX(-${smallViewPage * 100}%)`, transition: 'transform 0.3s ease-out' }}
             >
               {
                 cars.map((car) => (
@@ -78,9 +78,9 @@ const CarList = (props) => {
         carsCount={cars.length}
       />
       <HomeBbuttons
-        page={Ppage}
-        leftfunction={leftPpage}
-        rigthfunction={rigthPpage}
+        page={smallViewPage}
+        leftfunction={leftsmallViewPage}
+        rigthfunction={rigthsmallViewPage}
         carsCount={cars.length}
       />
     </Row>
@@ -88,7 +88,7 @@ const CarList = (props) => {
 };
 
 CarList.propTypes = {
-  cars: PropTypes.arrayOf.isRequired,
+  cars: PropTypes.arrayOf(PropTypes.object).isRequired,
   setdiplayCar: PropTypes.func.isRequired,
 };
 
