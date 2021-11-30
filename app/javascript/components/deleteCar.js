@@ -19,7 +19,7 @@ const DeleteCars = () => {
 
   return (
     (cars.length > 0) ?
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={1} md={4} className="p-3">
         {cars.map((car) => (
           <Col key={car.id}>
             <Card className="card-body">
