@@ -7,7 +7,7 @@ import googleplusImg from '../../Img/googleplus.png';
 const Car = (props) => {
   const { car, setdiplayCar } = props;
   const {
-    name, description, model, imageData,
+    name, description, model, image_data,
   } = car;
 
   return (
@@ -22,7 +22,7 @@ const Car = (props) => {
         >
           <img
             className="w-100"
-            src={imageData}
+            src={image_data}
             alt={name}
           />
         </button>
@@ -44,7 +44,7 @@ Car.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
-    imageData: PropTypes.string.isRequired,
+    image_data: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
   setdiplayCar: PropTypes.func.isRequired,
