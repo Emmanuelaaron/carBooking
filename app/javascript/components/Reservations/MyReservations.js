@@ -37,7 +37,7 @@ function MyReservations() {
             return (
               <li key={reservation.id} className={styles.rows}>
                 <div className={styles.imageContainer}>
-                  <img className={styles.carImg} src={car.image_data} alt={car.name} />
+                  <img className={styles.carImg} src={car.imageData} alt={car.name} />
                   <p className={styles.carName}>
                     {car.name}
                     :

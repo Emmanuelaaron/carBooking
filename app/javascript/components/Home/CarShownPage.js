@@ -11,7 +11,7 @@ const CarShownPage = (props) => {
   let ans = <></>;
   if (car) {
     const {
-      name, description, model, price, id, image_data,
+      name, description, model, price, id, imageData,
     } = car;
     ans = (
       <div className={`position-absolute p-0 m-0 position-relative bg-white ${display ? 'show-car' : 'hide-car'}`}>
@@ -22,7 +22,7 @@ const CarShownPage = (props) => {
           <div className="col-12 col-md-8 d-flex flex-column justify-content-center">
             <img
               className="w-100"
-              src={image_data}
+              src={imageData}
               alt={name}
             />
           </div>
@@ -66,7 +66,7 @@ CarShownPage.propTypes = {
   car: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    image_data: PropTypes.string,
+    imageData: PropTypes.string,
     model: PropTypes.string,
     id: PropTypes.number,
     price: PropTypes.number,

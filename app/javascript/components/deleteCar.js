@@ -22,7 +22,7 @@ const DeleteCars = () => {
       {cars.map((car) => (
         <Col key={car.id}>
           <Card className="card-body">
-            <Card.Img variant="top" src={car.image_data} />
+            <Card.Img variant="top" src={car.imageData} />
             <Card.Body className="d-flex justify-content-between align-items-center">
               <Card.Title>{car.name}</Card.Title>
               <Button variant="danger" onClick={() => removeCarAction(car.id)}>Delete</Button>

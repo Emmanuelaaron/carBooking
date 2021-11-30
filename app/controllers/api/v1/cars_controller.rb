@@ -5,7 +5,6 @@ class Api::V1::CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    @cars.map { |car| car[:image_data] = car.image_url }
     render json: { cars: @cars, code: 200 }
   end
 
