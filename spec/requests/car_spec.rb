@@ -1,29 +1,52 @@
 require 'rails_helper'
 
-RSpec.describe "Cars", type: :request do
-  describe "GET /api/v1/home" do
+RSpec.describe 'Cars', type: :request do
+  describe 'GET /api/v1/home' do
     before(:each) do
-      get '/api/v1/newuser', params: { :username => 'jaar'}
-      @token JSON.parse(response.body)['token']
-      post '/api/v1/new-car', params: { :username => ''}
+      post '/api/v1/new-user', params: { username: 'jaar' }
+      @token = JSON.parse(response.body)['token']
+      post '/api/v1/new-car',
+           params: { name: 'Ford', model: 'mustang', description: '1971 classic black', price: 850_000 },
+           headers: { Authorization: @token }
+      post '/api/v1/new-car',
+           params: { name: 'Ford', model: 'Escape', description: '2010 grey echo boost', price: 8000 },
+           headers: { Authorization: @token }
     end
 
-    it "let you create a new user" do
-      
-      get '/api/v1/home', params: { :username => 'jaar'}
+    it 'return all the cars after validation token' do
+      get '/api/v1/home', params: {}, headers: { Authorization: @token }
+      expect(JSON.parse(response.body)['cars'].length).to eq(2)
+    end
+  end
 
-      expect(JSON.parse(response.body)['code']).to eq(200)
+  describe 'GET /api/v1/new-car' do
+    before(:each) do
+      post '/api/v1/new-user', params: { username: 'jaar' }
+      @token = JSON.parse(response.body)['token']
     end
 
-    it "let you create only one user with the same username" do
-      post '/api/v1/newuser', params: { :username => 'jaar'}
-      post '/api/v1/newuser', params: { :username => 'jaar'}
-      expect(JSON.parse(response.body)['code']).to eq(409)
+    it 'allow you to add new cars' do
+      post '/api/v1/new-car',
+           params: { name: 'Ford', model: 'mustang', description: '1971 classic black', price: 850_000 },
+           headers: { Authorization: @token }
+      expect(JSON.parse(response.body)['code']).to eq(201)
+    end
+  end
+
+  describe 'GET /api/v1/cars/:id' do
+    before(:each) do
+      post '/api/v1/new-user', params: { username: 'jaar' }
+      @token = JSON.parse(response.body)['token']
+      post '/api/v1/new-car',
+           params: { name: 'Ford', model: 'mustang', description: '1971 classic black', price: 850_000 },
+           headers: { Authorization: @token }
     end
 
-    it "wont let you create a user with an empty value" do
-      post '/api/v1/newuser', params: { :username => ''}
-      expect(JSON.parse(response.body)['code']).to eq(204)
+    it 'allows you to delete cars' do
+      get '/api/v1/home', params: {}, headers: { Authorization: @token }
+      id = JSON.parse(response.body)['cars'][0]['id']
+      delete "/api/v1/cars/#{id}", params: {}, headers: { Authorization: @token }
+      expect(JSON.parse(response.body)['code']).to eq(202)
     end
   end
 end
