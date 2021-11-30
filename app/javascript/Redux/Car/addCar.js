@@ -3,7 +3,7 @@ const CAR_ADDED = 'CARS/CAR_ADDED';
 
 const addCar = (form) => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
-  await fetch('http://127.0.0.1:3000/api/v1/newcar', {
+  await fetch('http://127.0.0.1:3000/api/v1/new-car', {
     method: 'POST',
     headers: {
       Authorization: token,

@@ -18,7 +18,7 @@ export const logOut = (payload) => ({
 });
 
 export const fetchCreateUser = (username) => async (dispatch) => {
-  await fetch('http://127.0.0.1:3000/api/v1/newuser', {
+  await fetch('http://127.0.0.1:3000/api/v1/new-user', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
