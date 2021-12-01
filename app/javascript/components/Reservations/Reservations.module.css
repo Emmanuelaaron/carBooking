@@ -52,6 +52,7 @@
 
 .carImg {
   width: 70%;
+  border-radius: 15px;
 }
 
 .carName {
