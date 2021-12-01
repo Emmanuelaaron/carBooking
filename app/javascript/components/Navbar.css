@@ -76,12 +76,12 @@
   font-size: 1.3rem;
 }
 
-@media (max-width: 965px) {
+@media (min-width: 768px) and (max-width: 965px) {
   .nav-text {
     font-size: 1rem;
   }
 
   .title {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
