@@ -26,12 +26,11 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.find_by(id: reservation_params[:id])
     if @reservation
       @reservation.destroy
-      render json: {  message: 'Reservation succesfully deleted', code:202 }
+      render json: { message: 'Reservation succesfully deleted', code: 202 }
     else
-      render json: { message: 'Reservation not found', code:404 }
+      render json: { message: 'Reservation not found', code: 404 }
     end
   end
-  
 
   private
 

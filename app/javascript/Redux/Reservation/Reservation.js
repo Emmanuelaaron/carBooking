@@ -47,9 +47,9 @@ export const createReservation = (formData, setMessage) => async () => {
     });
 };
 
-export const deleteReservation = (id) => async () => {
+export const deleteReservation = (id) => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
-  await fetch(`http://127.0.0.1:3000/api/v1/reservations/${id}`, {
+  await fetch(`http://localhost:3000/api/v1/reservations/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: token,
