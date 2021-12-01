@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCarsNCities } from '../../Redux/Reservation/Reservation';
+import { fetchCarsNCities, deleteReservation } from '../../Redux/Reservation/Reservation';
 import styles from './Reservations.module.css';
 import Loading from '../Loading';
 
@@ -9,10 +9,15 @@ function MyReservations() {
   const { cars, cities, myReservations } = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   const loadCarsNCities = bindActionCreators(fetchCarsNCities, dispatch);
+  const removeReservation = bindActionCreators(deleteReservation, dispatch)
 
   useEffect(() => {
     loadCarsNCities();
   }, []);
+
+  const handleClick = (id) => {
+    removeReservation(id)
+  }
 
   return (
     (myReservations && cars && cities) ?
@@ -36,7 +41,7 @@ function MyReservations() {
                 <div className={styles.rightInfo}>
                   <p className={styles.carDescription}>{car.description.toUpperCase()}</p>
                   <p className={styles.date}>{date}</p>
-                  <button type="button" className={styles.button}>DELETE RESERVATION</button>
+                  <button type="button" className={styles.button} onClick={() => handleClick(reservation.id)}>DELETE RESERVATION</button>
                 </div>
               </li>
             );
