@@ -21,8 +21,6 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def delete
-    # p "this is the reservation_params[:reservation_id]"
-    # p reservation_params[:reservation_id]
     @reservation = Reservation.find_by(id: reservation_params[:id])
     if @reservation
       @reservation.destroy
