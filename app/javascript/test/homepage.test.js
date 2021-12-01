@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+require('jest-fetch-mock').enableMocks();
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -9,7 +10,6 @@ import { render, fireEvent } from '@testing-library/react';
 import store from '../Redux/ConfigureStore';
 import carsMock from './mocks/casrMocks';
 import { saveCars } from '../Redux/Home/Cars';
-import Session from '../components/Session'
 import HomePage from '../components/Home/HomePage';
 
 const renderWithRedux = (component) => ({
@@ -24,6 +24,7 @@ const renderWithRedux = (component) => ({
 
 describe('home Page', () => {
   beforeEach(() => {
+    fetchMock.mockOnce(JSON.stringify({code: 0}));
     store.dispatch(saveCars(carsMock()));
     sessionStorage.setItem('CarBooking', JSON.stringify({ token: '', session: true, level: 0 }));
   });

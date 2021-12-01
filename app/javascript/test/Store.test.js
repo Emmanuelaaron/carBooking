@@ -2,6 +2,7 @@ import React from 'react';
 import store from '../Redux/ConfigureStore';
 import carsMock from './mocks/casrMocks';
 import { saveCars } from '../Redux/Home/Cars';
+require('jest-fetch-mock').enableMocks();
 
 describe('Store', () => {
   beforeEach(() => {
