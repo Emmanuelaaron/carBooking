@@ -24,7 +24,7 @@
 
 .list {
   list-style: none;
-  padding: 0 5%;
+  padding: 0 10%;
   margin: 0;
   width: 100%;
   overflow-y: auto;
@@ -35,50 +35,101 @@
   text-align: center;
 }
 
-.rows {
+.card {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  border: 1px solid #97bf11;
+  grid-template-columns: 2fr 3fr 3fr;
+  border: 1px solid #dfdfdf;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 #b6b6b687;
   margin: 15px 0;
-  height: 150px;
+  padding: 15px;
+  align-items: center;
 }
 
-.rows p {
+.card p {
   margin: 0;
 }
 
+.carImg {
+  width: 70%;
+  border-radius: 15px;
+}
+
 .carName {
+  font-weight: bold;
+  color: #818181;
+}
+
+.carModel {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.lefftInfo {
+  text-align: left;
+  padding-left: 35px;
+}
+
+.city {
+  color: #97bf11;
+}
+
+.rightInfo {
+  border-left: solid 1px;
+  color: #b5b5b5;
+  height: 60%;
+  margin-left: 25px;
+  text-align: left;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date {
+  color: black;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #97bf11;
+  color: #fff;
+  border: 1px solid #97bf11;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.noReservation {
   color: #97bf11;
   font-weight: bold;
 }
 
-.imageContainer {
-  margin: auto;
-}
-
-.carImg {
-  width: 50%;
-  height: 80%;
-}
-
-.infoContainer {
-  margin: auto;
-  width: 75%;
-}
-
-.header {
-  font-weight: bold;
-  background-color: rgb(191, 191, 191);
-}
-
-.info {
-  font-size: 0.9rem;
-}
-
 @media (max-width: 768px) {
-  .container {
-    height: 85vh;
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carImg {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .lefftInfo {
+    grid-area: 2 / 1 / 2 / 3;
+    font-size: 0.9rem;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .rightInfo {
+    grid-area: 3 / 1 / 3 / 3;
+    margin: 0;
+    text-align: center;
+    padding: 15px;
+    border: none;
+  }
+
+  .imageContainer {
+    grid-area: 1 / 1 / 2 / 3;
   }
 }

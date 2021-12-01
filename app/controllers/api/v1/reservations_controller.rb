@@ -20,9 +20,21 @@ class Api::V1::ReservationsController < ApplicationController
     render json: { cities: @cities, cars: @cars, code: 200, myReservations: @my_reservations }
   end
 
+  def delete
+    # p "this is the reservation_params[:reservation_id]"
+    # p reservation_params[:reservation_id]
+    @reservation = Reservation.find_by(id: reservation_params[:id])
+    if @reservation
+      @reservation.destroy
+      render json: { message: 'Reservation succesfully deleted', code: 202 }
+    else
+      render json: { message: 'Reservation not found', code: 404 }
+    end
+  end
+
   private
 
   def reservation_params
-    params.permit(:date, :car_id, :city_id)
+    params.permit(:date, :car_id, :city_id, :id)
   end
 end
