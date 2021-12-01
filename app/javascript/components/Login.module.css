@@ -13,8 +13,8 @@
   font-size: 1.5rem;
 }
 
-.inputContainer{
-  margin:auto;
+.inputContainer {
+  margin: auto;
   text-align: center;
 }
 
@@ -28,14 +28,13 @@
   color: #fff;
   background-color: #97bf11;
   border: solid 1px #fff;
-  padding: 10px 5px;
   font-family: Arial, sans-serif;
   margin-bottom: 10px;
   width: 100%;
   padding: 10px 15px;
 }
 
-.logInput::placeholder{
+.logInput::placeholder {
   color: #fff;
 }
 
@@ -52,7 +51,7 @@
 }
 
 @media (max-width: 768px) {
-  .container{
+  .container {
     grid-template-columns: 1fr;
     justify-items: center;
   }

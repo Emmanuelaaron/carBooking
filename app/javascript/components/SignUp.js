@@ -6,6 +6,7 @@ import {
 } from 'react-bootstrap';
 import { fetchCreateUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
+import styles from './Login.module.css'
 
 const SignUp = () => {
   const [userInp, setUserInp] = useState('');
@@ -27,29 +28,24 @@ const SignUp = () => {
   };
 
   return (
-    <Container>
-      <Row className="m-0">
-        <Col md="6" className="p-3">
-          <img src={logo} className="w-100" alt="logo" />
-        </Col>
-        <Col md="6">
-          <Form className="p-3 d-flex flex-column justify-content-center h-100" onSubmit={(e) => e.preventDefault()}>
-            <Form.Label className="fs-1 text-center">Sign Up User:</Form.Label>
-            <Form.Group className="mb-3 d-flex flex-row">
-              <Form.Control
-                type="username"
-                placeholder="Enter Username:"
-                onChange={(e) => UpdateUserInp(e.target.value)}
-                onKeyUp={(e) => inputEnterSubmit(e)}
-              />
-              <Button variant="success" type="button" onClick={createUserBtnHandler}>
-                SignUp
-              </Button>
-            </Form.Group>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <div className={styles.container}>
+      <img src={logo} className={styles.img} alt="logo" />
+      <Form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
+        <Form.Label className={styles.logLabel}>Sign Up User:</Form.Label>
+        <Form.Group className={styles.inputContainer}>
+          <Form.Control
+            type="username"
+            placeholder="Enter Username:"
+            onChange={(e) => UpdateUserInp(e.target.value)}
+            onKeyUp={(e) => inputEnterSubmit(e)}
+            bsPrefix={styles.logInput}
+          />
+          <Button bsPrefix={styles.logBtn} type="button" onClick={createUserBtnHandler}>
+            SignUp
+          </Button>
+        </Form.Group>
+      </Form>
+    </div>
   );
 };
 
