@@ -29,7 +29,7 @@ const Session = () => {
               ? <Login />
               : <SignUp />
           }
-          <button className="link-info bg-transparent border-0" type="button" onClick={buttonActionHandle}>
+          <button className="text-white bg-transparent border-0" type="button" onClick={buttonActionHandle}>
             { logNsign ? 'Sign Up' : 'Log In' }
           </button>
         </div>

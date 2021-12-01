@@ -1,0 +1,62 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+}
+
+.img {
+  width: 100%;
+}
+
+.logLabel {
+  font-size: 1.5rem;
+}
+
+.inputContainer {
+  margin: auto;
+  text-align: center;
+}
+
+.formContainer {
+  text-align: center;
+  margin: auto;
+}
+
+.logInput {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #97bf11;
+  border: solid 1px #fff;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.logInput::placeholder {
+  color: #fff;
+}
+
+.logBtn {
+  color: #97bf11;
+  background-color: #fff;
+  border-color: #fff;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 40px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .img {
+    width: 50%;
+  }
+}

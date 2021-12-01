@@ -16,13 +16,11 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     @cities = City.all
     @cars = Car.all
-    @my_reservations = Reservation.all
+    @my_reservations = @current_user.reservations.all
     render json: { cities: @cities, cars: @cars, code: 200, myReservations: @my_reservations }
   end
 
   def delete
-    # p "this is the reservation_params[:reservation_id]"
-    # p reservation_params[:reservation_id]
     @reservation = Reservation.find_by(id: reservation_params[:id])
     if @reservation
       @reservation.destroy
