@@ -41,14 +41,15 @@ body {
 }
 
 .bg-session {
-  background: linear-gradient(#415209d5 0%, #415209d5 100%), url(./Img/bglogin.jpg) no-repeat center;
-  background-attachment: fixed;
-  background-size: cover;
   height: 100vh;
+  background-image: linear-gradient(#8db300ed, #8db300ed), url(https://media.istockphoto.com/photos/illustration-of-generic-sports-coupe-car-on-white-picture-id1003904064?k=20&m=1003904064&s=612x612&w=0&h=qjMmK0xlPn7GLOefECHBNI0VWccVlLK7xo8vuIBw5uM=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .bg-dark-transparent {
-  background-color: rgba(0, 0, 0, 0.637);
+  background-color: rgb(255 255 255 / 22%);
 }
 
 .navbar {
@@ -174,6 +175,26 @@ body {
   width: 25px;
   height: 15px;
   transform: rotate(-180deg);
+}
+
+.log-btn {
+  color: #97bf11;
+  background-color: #fff;
+  border-color: #fff;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 40px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.log-input {
+  border-radius: 30px;
+  color: #fff;
+  background-color: #97bf11;
+  border: solid 1px #fff;
+  padding: 10px 5px;
+  font-family: Arial, sans-serif;
 }
 
 .car-icons {

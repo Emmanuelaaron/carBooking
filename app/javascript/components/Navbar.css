@@ -71,3 +71,17 @@
     }
   }
 }
+
+.nav-text {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) and (max-width: 965px) {
+  .nav-text {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+}

@@ -25,6 +25,7 @@ Our main features are:
 - Bootstrap
 - Webpack
 - Jest testing framework
+- RSpect testing framework
 - Git and Github pages
 - VSCode
 - Linter Checkers
@@ -123,6 +124,11 @@ This requires:
 - description
 - price
 - image
+
+### Testing
+```
+bundle exec rspec
+```
 
 ## Authors 👤 
 

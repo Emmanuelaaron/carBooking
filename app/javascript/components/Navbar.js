@@ -71,7 +71,7 @@ const Navbar = () => {
                     key={link.id}
                   >
                     <NavLink
-                      className="fs-5 nav-link px-3"
+                      className="nav-text nav-link px-3"
                       to={link.path}
                       activeclassname="active"
                       exact="true"
