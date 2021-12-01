@@ -24,7 +24,7 @@
 
 .list {
   list-style: none;
-  padding: 0 5%;
+  padding: 0 10%;
   margin: 0;
   width: 100%;
   overflow-y: auto;
@@ -35,50 +35,67 @@
   text-align: center;
 }
 
-.rows {
+.card {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  border: 1px solid #97bf11;
+  grid-template-columns: 2fr 3fr 3fr;
+  border: 1px solid #dfdfdf;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 #b6b6b687;
   margin: 15px 0;
-  height: 150px;
+  padding: 15px;
+  align-items: center;
 }
 
-.rows p {
+.card p {
   margin: 0;
 }
 
-.carName {
-  color: #97bf11;
-  font-weight: bold;
-}
-
-.imageContainer {
-  margin: auto;
-}
-
 .carImg {
-  width: 50%;
-  height: 80%;
+  width: 70%;
 }
 
-.infoContainer {
-  margin: auto;
-  width: 75%;
-}
-
-.header {
+.carName {
   font-weight: bold;
-  background-color: rgb(191, 191, 191);
+  color: #818181;
 }
 
-.info {
-  font-size: 0.9rem;
+.carModel{
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
-@media (max-width: 768px) {
-  .container {
-    height: 85vh;
-  }
+.lefftInfo{
+  text-align: left;
+  padding-left: 35px;
 }
+
+.city{
+  color: #97bf11;
+}
+
+.rightInfo {
+  border-left: solid 1px;
+  color: #b5b5b5;
+  height: 60%;
+  margin-left: 25px;
+  text-align: left;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date {
+  color: black;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #97bf11;
+  color: #fff;
+  border: 1px solid #97bf11;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+

@@ -24,21 +24,19 @@ function MyReservations() {
             const city = cities.find((city) => city.id === reservation.city_id);
             const { date } = reservation;
             return (
-              <li key={reservation.id} className={styles.rows}>
+              <li key={reservation.id} className={styles.card}>
+                <div className={styles.lefftInfo}>
+                  <p className={styles.carName}>{car.name}</p>
+                  <p className={styles.carModel}>{car.model.toUpperCase()}</p>
+                  <p className={styles.city}>{city.name}</p>                  
+                </div>
                 <div className={styles.imageContainer}>
                   <img className={styles.carImg} src={car.imageData} alt={car.name} />
-                  <p className={styles.carName}>
-                    {car.name}
-                    :
-                    {' '}
-                    {car.model}
-                  </p>
                 </div>
-                <div className={styles.infoContainer}>
-                  <p className={styles.header}>Date of reservation</p>
-                  <p className={styles.info}>{date}</p>
-                  <p className={styles.header}>City of reservation</p>
-                  <p className={styles.info}>{city.name}</p>
+                <div className={styles.rightInfo}>
+                  <p className={styles.carDescription}>{car.description.toUpperCase()}</p>
+                  <p className={styles.date}>{date}</p>
+                  <button type="button" className={styles.button}>DELETE RESERVATION</button>
                 </div>
               </li>
             );
