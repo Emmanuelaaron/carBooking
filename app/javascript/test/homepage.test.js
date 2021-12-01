@@ -31,8 +31,6 @@ describe('home Page', () => {
 
   test('home page must show all the cars', () => {
     const { getByTestId  } = renderWithRedux(<HomePage />);
-    console.log(getAllByText('GT500'));
-    //expect(getByText('GT500') !== null).toBe(true);
-    //expect(cars.length).toBe(7);
+    expect(getByTestId('car-container').childNodes.length).toBe(7);
   });
 });
