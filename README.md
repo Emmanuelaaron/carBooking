@@ -15,7 +15,7 @@ Our main features are:
 
 ![screenshot](./imgs/login2.png) ![screenshot](./imgs/reservationform2.png) ![screenshot](./imgs/reservations2.png) ![screenshot](./imgs/homePage2.png) ![screenshot](./imgs/addCar2.png)
 
-
+ [kanban board](https://github.com/Emmanuelaaron/carBooking/projects/1)
 
 ## Built With
 
@@ -129,6 +129,8 @@ This requires:
 ```
 bundle exec rspec
 ```
+
+**Number of team members:** 3
 
 ## Authors 👤 
 
