@@ -32,11 +32,12 @@ const Login = () => {
         <Form.Label className={styles.logLabel}>Login:</Form.Label>
         <Form.Group className={styles.inputContainer}>
           <Form.Control
-            type="username"
+            type="text"
             placeholder="Enter Username:"
             onChange={(e) => UpdateUserInp(e.target.value)}
             onKeyUp={(e) => inputEnterSubmit(e)}
             bsPrefix={styles.logInput}
+            data-testid="user-login-inp"
           />
           <Button bsPrefix={styles.logBtn} type="button" onClick={loginUserBtnHandler}>
             Login

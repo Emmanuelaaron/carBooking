@@ -5,7 +5,6 @@
 require('jest-fetch-mock').enableMocks();
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
 import store from '../Redux/ConfigureStore';
 import carsMock from './mocks/casrMocks';
@@ -13,7 +12,6 @@ import cityMock from './mocks/cityMocks';
 import reservationMock from './mocks/reservationMock';
 import { saveData } from '../Redux/Reservation/Reservation';
 import { saveCars } from '../Redux/Home/Cars';
-import HomePage from '../components/Home/HomePage';
 import Session from '../components/Session';
 import { newSession } from '../Redux/Session/Session';
 
@@ -59,12 +57,12 @@ describe('Reservation Page', () => {
   });
 
   test('car drop down must containt all the cars added', () => {
-    const { getByText, getByTestId } = renderWithRedux(<Session />);
+    const { getByTestId } = renderWithRedux(<Session />);
     expect(getByTestId('cardid-select').childNodes.length).toBe(8);
   });
 
   test('city drop down must containt all the citites added', () => {
-    const { getByText, getByTestId } = renderWithRedux(<Session />);
+    const { getByTestId } = renderWithRedux(<Session />);
     expect(getByTestId('citydid-select').childNodes.length).toBe(8);
   });
 });
