@@ -29,7 +29,7 @@ export const fetchCars = () => async (dispatch) => {
     });
 };
 
-export const removeCar = (id) => async (dispatch) => {
+export const removeCar = (id, setDeleting) => async (dispatch) => {
   const { token } = JSON.parse(sessionStorage.getItem('CarBooking'));
   await fetch(`http://localhost:3000/api/v1/cars/${id}`, {
     method: 'DELETE',
@@ -40,6 +40,7 @@ export const removeCar = (id) => async (dispatch) => {
   }).then((response) => response.json())
     .then((data) => {
       if (data.code === 202) {
+        setDeleting(false);
         dispatch(deleteCar(id));
       }
     });

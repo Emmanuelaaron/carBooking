@@ -1,0 +1,57 @@
+.delete-car-container {
+  overflow-y: auto;
+}
+
+.border-green {
+  border: 2px solid #97bf11;
+}
+
+.delete-car-card {
+  aspect-ratio: 4/3;
+}
+
+.text-green {
+  color: #97bf11;
+}
+
+.btn-delete-car {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border: 1px solid #f00;
+  background-color: #000000cb;
+  border-radius: 5px;
+  padding: 6px 6px 6px 8px;
+}
+
+.btn-delete-car:hover {
+  background-color: #fff;
+}
+
+.btn-delete-car img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.car-image-data {
+  width: 100%;
+  height: 100%;
+}
+
+.deleting-car-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.432);
+}

@@ -10,7 +10,7 @@ const reducer = combineReducers({
   cars: carsReducer,
   reservations: reservationReducer,
 });
-const middleWare = applyMiddleware(thunkMiddleware);
+const middleWare = applyMiddleware(thunkMiddleware, logger);
 
 const Store = createStore(reducer, middleWare);
 
