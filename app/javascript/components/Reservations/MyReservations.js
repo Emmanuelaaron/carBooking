@@ -23,7 +23,7 @@ function MyReservations() {
     (myReservations && cars && cities) ?
     <div className={styles.container}>
         <h2 className={styles.title}>My Cars Reservations</h2>
-        <ul className={styles.list}>
+        <ul className={styles.list} data-testid="reservations-container">
           { 
             myReservations.length > 0 ?
             myReservations.map((reservation) => {

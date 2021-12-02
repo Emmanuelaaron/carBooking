@@ -12,7 +12,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const loadCarsBind = bindActionCreators(fetchCars, dispatch);
   const [diplayCar, setdiplayCar] = useState({ car: null, display: false });
-
+  
   useEffect(() => {
     loadCarsBind();
   }, []);

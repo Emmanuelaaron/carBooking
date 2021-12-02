@@ -40,6 +40,7 @@ const CarList = (props) => {
             <div
               className="slider car-list"
               style={{ transform: `translateX(-${page * 100}%)`, transition: 'transform 0.3s ease-out' }}
+              data-testid="car-container"
             >
               {
                 cars.map((car) => (
