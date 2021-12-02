@@ -1,4 +1,4 @@
-.delete-car-container{
+.delete-car-container {
   overflow-y: auto;
 }
 
@@ -18,14 +18,14 @@
   position: absolute;
   top: 3px;
   right: 3px;
-  border: 1px solid #ff0000;
+  border: 1px solid #f00;
   background-color: #000000cb;
   border-radius: 5px;
   padding: 6px 6px 6px 8px;
 }
 
 .btn-delete-car:hover {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .btn-delete-car img {
