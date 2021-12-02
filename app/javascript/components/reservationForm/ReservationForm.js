@@ -97,7 +97,14 @@ const ReservationForm = () => {
             }
           </Form.Select>
 
-          <Form.Select bsPrefix={styles.selection} value={reservationData.city_id} aria-label="Select a city" className={`${styles.textFont} mx-1 text-center`} onChange={(e) => updateCityId(e.target.value)}>
+          <Form.Select
+            bsPrefix={styles.selection}
+            value={reservationData.city_id}
+            aria-label="Select a city"
+            className={`${styles.textFont} mx-1 text-center`}
+            onChange={(e) => updateCityId(e.target.value)}
+            data-testid="citydid-select"
+          >
             <option>Select a City</option>
             {
               cities.map((city) => (
