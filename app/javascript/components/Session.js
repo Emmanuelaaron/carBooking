@@ -8,7 +8,7 @@ import ReservationForm from './reservationForm/ReservationForm';
 import HomePage from './Home/HomePage';
 import AddCar from './AddCar';
 import MyReservations from './Reservations/MyReservations';
-import DeleteCars from './deleteCar';
+import DeleteCars from './Cars/deleteCar';
 
 const Session = () => {
   const currentSession = useSelector((state) => state.session);
