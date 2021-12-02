@@ -1,0 +1,23 @@
+.home-container {
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    height: 90vh;
+  }
+}
+
+.car-list {
+  min-width: 0;
+  width: 100%;
+}
+
+.md-car-container-a {
+  min-height: 402px;
+}
+
+.md-car-container-b {
+  min-height: 402px;
+}

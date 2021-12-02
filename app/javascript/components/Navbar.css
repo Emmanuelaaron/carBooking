@@ -1,0 +1,87 @@
+.link-ul-container {
+  width: 100%;
+  height: 100%;
+}
+
+.link-container {
+  list-style: none;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 400px;
+  height: 100%;
+}
+
+.hide-menu-links {
+  display: flex;
+}
+
+.show-menu-links {
+  display: flex;
+}
+
+.title {
+  font-family: 'Praise', Arial, Helvetica, sans-serif;
+  transform: rotate(-10deg);
+  font-size: 50px;
+  color: #97bf11;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-family: 'Praise', Arial, Helvetica, sans-serif;
+    transform: rotate(-10deg);
+    font-size: 20px;
+    color: #fff;
+    margin: 0 10px;
+    border-radius: 50%;
+  }
+
+  .link-container {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 70px;
+    left: 0;
+    padding: 0;
+    background-color: #97bf11;
+    border-radius: 0 0 10px 0;
+    height: 400px;
+    width: 220px;
+    animation-name: showmenulinks;
+    animation-duration: 1s;
+  }
+
+  .hide-menu-links {
+    display: none;
+  }
+
+  .show-menu-links {
+    display: flex;
+  }
+
+  @keyframes showmenulinks {
+    from {
+      top: -470px;
+    }
+
+    to {
+      top: 70px;
+    }
+  }
+}
+
+.nav-text {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) and (max-width: 965px) {
+  .nav-text {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+}
