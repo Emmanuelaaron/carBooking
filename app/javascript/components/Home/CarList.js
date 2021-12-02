@@ -28,50 +28,46 @@ const CarList = (props) => {
   };
 
   return (
-    <Row className="m-0 p-0 h-100 position-relative">
-      <Col md="12" className="flex-grow p-0">
-        <div className="d-flex flex-column justify-content-center h-100">
-          <div className="w-100 text-center">
-            <h2>LATEST MODELS</h2>
-            <p className="text-muted">Please select a model</p>
-            <PageIndicator page={page} smallViewPage={smallViewPage} cars={cars} />
-          </div>
-          <div className="d-none d-md-block slider-container">
-            <div
-              className="slider car-list"
-              style={{ transform: `translateX(-${page * 100}%)`, transition: 'transform 0.3s ease-out' }}
-              data-testid="car-container"
-            >
-              {
-                cars.map((car) => (
-                  <Car
-                    key={car.id}
-                    car={car}
-                    setdiplayCar={setdiplayCar}
-                  />
-                ))
-              }
-            </div>
-          </div>
-
-          <div className="d-md-none slider-container md-car-container-a">
-            <div
-              className="slider md-car-container-b"
-              style={{ transform: `translateX(-${smallViewPage * 100}%)`, transition: 'transform 0.3s ease-out' }}
-            >
-              {
-                cars.map((car) => (
-                  <Car
-                    key={car.id}
-                    car={car}
-                    setdiplayCar={setdiplayCar}
-                  />
-                ))
-              }
-            </div>
+    <div className="m-0 p-0 position-relative  car-list-container">
+      <div className="w-100 text-center">
+          <h2>LATEST MODELS</h2>
+          <p className="text-muted">Please select a model</p>
+          <PageIndicator page={page} smallViewPage={smallViewPage} cars={cars} />
+        </div>
+        <div className="d-none d-md-block slider-container w-100 border-red">
+          <div
+            className="slider car-list"
+            style={{ transform: `translateX(-${page * 100}%)`, transition: 'transform 0.3s ease-out' }}
+            data-testid="car-container"
+          >
+            {
+              cars.map((car) => (
+                <Car
+                  key={car.id}
+                  car={car}
+                  setdiplayCar={setdiplayCar}
+                />
+              ))
+            }
           </div>
         </div>
-      </Col>
+
+        <div className="d-md-none slider-container md-car-container-a border-red w-100">
+          <div
+            className="slider md-car-container-b"
+            style={{ transform: `translateX(-${smallViewPage * 100}%)`, transition: 'transform 0.3s ease-out' }}
+          >
+            {
+              cars.map((car) => (
+                <Car
+                  key={car.id}
+                  car={car}
+                  setdiplayCar={setdiplayCar}
+                />
+              ))
+            }
+          </div>
+        </div>
       <HomeAbuttons
         page={page}
         leftfunction={pageLeftBtn}
@@ -84,7 +80,7 @@ const CarList = (props) => {
         rigthfunction={rigthsmallViewPage}
         carsCount={cars.length}
       />
-    </Row>
+    </div>
   );
 };
 

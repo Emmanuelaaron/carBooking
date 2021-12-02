@@ -20,8 +20,10 @@ function MyReservations() {
   }
 
   return (
-    (myReservations && cars && cities) ?
-    <div className={styles.container}>
+    <div className="container-fluid p-0 position-relative">
+    {
+      (myReservations && cars && cities) ?
+      <div className={styles.container + ' bg-white'}>
         <h2 className={styles.title}>My Cars Reservations</h2>
         <ul className={styles.list} data-testid="reservations-container">
           { 
@@ -59,7 +61,9 @@ function MyReservations() {
         <p className={styles.subtitle}>This is a list of all the cars you have reserve</p>
       </div>
       :
-      <Loading />
+      <Loading status={true} />
+    }
+    </div>
   );
 }
 

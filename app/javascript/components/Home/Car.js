@@ -14,14 +14,14 @@ const Car = (props) => {
     <div
       className="col-12 col-md-4"
     >
-      <div className="p-3">
+      <div className="p-3 min-height-fit-content">
         <button
           className="border-0 bg-transparent"
           type="button"
           onClick={() => setdiplayCar({ car, display: true })}
         >
           <img
-            className="w-100"
+            className="w-100 rounded"
             src={imageData}
             alt={name}
           />

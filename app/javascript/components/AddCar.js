@@ -4,10 +4,12 @@ import { bindActionCreators } from 'redux';
 import { Form, Container, Button } from 'react-bootstrap';
 import addCar from '../Redux/Car/addCar';
 import styles from './reservationForm/reservationForm.module.css'
+import Loading from './Loading';
 
 const AddCar = () => {
   const dispatch = useDispatch();
   const addCarAction = bindActionCreators(addCar, dispatch);
+  const [ adding, setAdding ] = useState(false);
 
   const [carData, setCarData] = useState({
     name: '',
@@ -54,17 +56,19 @@ const AddCar = () => {
 
   const submitCar = (e) => {
     e.preventDefault();
+    setAdding(true);
     const form = new FormData()
     form.append('name', carData.name)
     form.append('model', carData.model)
     form.append('description', carData.description)
     form.append('price', carData.price)
     form.append('image', carData.imgInp)
-    addCarAction(form);
+    addCarAction(form, setAdding);
   };
 
   return (
     <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`}>
+      <Loading status={adding}/>
       <h1 className="text-center mt-5 text-white w-100 fs-3 border-bottom border-white pb-2">Add Car:</h1>
       <Form className={`${styles.form} mx-auto mt-4 text-center`} onSubmit={submitCar}>
         <div>
