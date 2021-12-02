@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Form, Container, Button } from 'react-bootstrap';
 import addCar from '../Redux/Car/addCar';
+import styles from './reservationForm/reservationForm.module.css'
 
 const AddCar = () => {
   const dispatch = useDispatch();
@@ -63,53 +64,63 @@ const AddCar = () => {
   };
 
   return (
-    <Container>
-      <Form onSubmit={submitCar}>
-        <Form.Label className="fs-1 text-center">Add Car:</Form.Label>
-
-        <Form.Group className="mb-3">
+    <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`}>
+      <h1 className="text-center mt-5 text-white w-100 fs-3 border-bottom border-white pb-2">Add Car:</h1>
+      <Form className={`${styles.form} mx-auto mt-4 text-center`} onSubmit={submitCar}>
+        <div>
           <Form.Control
             type="text"
             placeholder="Enter Car name"
             onChange={changeName}
+            bsPrefix={styles.selection}
+            className="m-2"
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
+               
           <Form.Control
             type="text"
             placeholder="Enter Car model"
             onChange={changeModel}
+            bsPrefix={styles.selection}
+            className="m-2"
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
+        
           <Form.Control
             type="text"
             placeholder="Enter Car description"
             onChange={changeDescription}
+            bsPrefix={styles.selection}
+            className="m-2"
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
+                
           <Form.Control
             type="text"
             placeholder="Enter Car price"
             onChange={changePrice}
+            bsPrefix={styles.selection}
+            className="m-2"
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Control
-            type="file"
-            placeholder="Enter Car name"
-            onChange={(e) => setImgInp(e.target)}
-          />
-        </Form.Group>
-        <Button
-          variant="success"
-          type="submit"
-        >
-          Create
-        </Button>
+          <div className="d-flex justify-content-center">
+            <Form.Control
+              type="file"
+              placeholder="Enter Car name"
+              onChange={(e) => setImgInp(e.target)}
+              className="m-2 w-50 rounded-pill text-center"
+            />
+          </div>
+        </div>
+        <div className="w-100 text-center">
+          <Button
+            variant="success"
+            type="submit"
+            bsPrefix={styles.button}
+            className="w-50 mt-3"
+          >
+            Create
+          </Button>
+
+        </div>
       </Form>
-    </Container>
+    </div>
   );
 };
 
