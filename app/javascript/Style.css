@@ -221,20 +221,6 @@ body {
   padding: 5px;
 }
 
-.slider-container {
-  height: auto;
-  display: inline-flex;
-  overflow: hidden;
-  scrollbar-width: none;
-}
-
-.slider {
-  height: auto;
-  display: inline-flex;
-  scrollbar-width: none;
-  min-width: 0;
-}
-
 .dotIndicator {
   background-color: rgb(128, 128, 128);
   width: 10px;
@@ -259,10 +245,6 @@ body {
     max-height: 70px;
     background-color: #97bf11;
     border: 0;
-  }
-
-  .slider {
-    width: 100vh;
   }
 
   .page-container {

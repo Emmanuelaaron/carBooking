@@ -10,64 +10,54 @@ const CarList = (props) => {
   const { cars, setdiplayCar } = props;
   const [page, setPage] = useState(0);
   const [smallViewPage, setsmallViewPage] = useState(0);
-
+  console.log(((page % 300) === 0), (page + (page % 300)), (cars.length / 3));
   const pageLeftBtn = () => {
-    setPage(page - 1);
+    let ans;
+    if ((page % 300) === 0){
+      ans = page - 300;
+    } else {
+      ans = page - (page % 300);
+    }
+    setPage(ans);
   };
 
   const pageRigthBtn = () => {
-    setPage(page + 1);
+    let ans;
+    if ((page % 300) === 0){
+      ans = page + 300;
+    } else {
+      ans = page + (300 - (page % 300));
+    }
+    setPage(ans);
   };
 
   const leftsmallViewPage = () => {
-    setsmallViewPage(smallViewPage - 1);
+    setPage(page - 100);
   };
 
   const rigthsmallViewPage = () => {
-    setsmallViewPage(smallViewPage + 1);
+    setPage(page + 100);
   };
 
   return (
-    <div className="m-0 p-0 position-relative  car-list-container">
+    <div className="m-0 p-0 position-relative car-list-container">
       <div className="w-100 text-center">
-          <h2>LATEST MODELS</h2>
-          <p className="text-muted">Please select a model</p>
-          <PageIndicator page={page} smallViewPage={smallViewPage} cars={cars} />
-        </div>
-        <div className="d-none d-md-block slider-container w-100 border-red">
-          <div
-            className="slider car-list"
-            style={{ transform: `translateX(-${page * 100}%)`, transition: 'transform 0.3s ease-out' }}
-            data-testid="car-container"
-          >
-            {
-              cars.map((car) => (
-                <Car
-                  key={car.id}
-                  car={car}
-                  setdiplayCar={setdiplayCar}
-                />
-              ))
-            }
-          </div>
-        </div>
-
-        <div className="d-md-none slider-container md-car-container-a border-red w-100">
-          <div
-            className="slider md-car-container-b"
-            style={{ transform: `translateX(-${smallViewPage * 100}%)`, transition: 'transform 0.3s ease-out' }}
-          >
-            {
-              cars.map((car) => (
-                <Car
-                  key={car.id}
-                  car={car}
-                  setdiplayCar={setdiplayCar}
-                />
-              ))
-            }
-          </div>
-        </div>
+        <h2>LATEST MODELS</h2>
+        <p className="text-muted">Please select a model</p>
+        <PageIndicator page={page} smallViewPage={smallViewPage} cars={cars} />
+      </div>
+      <div className="slider-container" data-testid="car-container">
+        {
+          cars.map((car) => (
+            <Car
+                car={car}
+                setdiplayCar={setdiplayCar}
+                page={(page)}
+                key={car.id}
+              />
+          ))
+        }
+      </div>
       <HomeAbuttons
         page={page}
         leftfunction={pageLeftBtn}
@@ -75,7 +65,7 @@ const CarList = (props) => {
         carsCount={cars.length}
       />
       <HomeBbuttons
-        page={smallViewPage}
+        page={page}
         leftfunction={leftsmallViewPage}
         rigthfunction={rigthsmallViewPage}
         carsCount={cars.length}

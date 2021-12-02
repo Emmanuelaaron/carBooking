@@ -5,15 +5,13 @@ import twitterImg from '../../Img/twitter.png';
 import googleplusImg from '../../Img/googleplus.png';
 
 const Car = (props) => {
-  const { car, setdiplayCar } = props;
+  const { car, setdiplayCar, page } = props;
   const {
     name, description, model, imageData,
   } = car;
 
   return (
-    <div
-      className="col-12 col-md-4"
-    >
+    <div style={{ transform: `translateX(-${page}%)`, transition: 'transform 0.3s ease-out' }} className="col-12 col-md-4">
       <div className="p-3 min-height-fit-content">
         <button
           className="border-0 bg-transparent"

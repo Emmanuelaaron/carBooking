@@ -67,7 +67,7 @@ const AddCar = () => {
   };
 
   return (
-    <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`}>
+    <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center position-relative`}>
       <Loading status={adding}/>
       <h1 className="text-center mt-5 text-white w-100 fs-3 border-bottom border-white pb-2">Add Car:</h1>
       <Form className={`${styles.form} mx-auto mt-4 text-center`} onSubmit={submitCar}>
