@@ -27,7 +27,7 @@ const DeleteCars = () => {
     (cars.length > 0) ?
       <div className="container-fluid position-relative">
         <h1 className="fs-1 text-green text-center w-100">All Cars</h1>
-        <div className="row m-0 p-2 delete-car-container">
+        <div className="row m-0 p-2 delete-car-container" data-testid="delete-car-container">
           {
             cars.map((car) => {
               const imgStyle = {
