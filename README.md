@@ -13,7 +13,7 @@ Our main features are:
 - Delete car that displays all the added cars and an option to delete each car.
 
 
-![screenshot](./imgs/login.png) ![screenshot](./imgs/reservationform.png) ![screenshot](./imgs/reservations.png) ![screenshot](./imgs/homePage.png) ![screenshot](./imgs/addCar.png)
+![screenshot](./imgs/login2.png) ![screenshot](./imgs/reservationform2.png) ![screenshot](./imgs/reservations2.png) ![screenshot](./imgs/homePage2.png) ![screenshot](./imgs/addCar2.png)
 
 
 
