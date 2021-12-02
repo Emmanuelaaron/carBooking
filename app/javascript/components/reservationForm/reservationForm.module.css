@@ -40,6 +40,10 @@
   filter: invert(1);
 }
 
+.selection::placeholder {
+  color: #fff;
+}
+
 .date {
   padding: 7.5px;
 }
