@@ -79,7 +79,14 @@ const ReservationForm = () => {
           cities. No hidden fees.
         </p>
         <Form className={`${styles.form} mx-auto mt-4`} onSubmit={handleSubmit}>
-          <Form.Select value={reservationData.car_id} bsPrefix={styles.selection} aria-label="select a car" className={`${styles.textFont} mx-1 text-center`} onChange={(e) => updateCarId(e.target.value)}>
+          <Form.Select
+            value={reservationData.car_id}
+            bsPrefix={styles.selection}
+            aria-label="select a car"
+            className={`${styles.textFont} mx-1 text-center`}
+            onChange={(e) => updateCarId(e.target.value)}
+            data-testid="cardid-select"
+          >
             <option className={styles.textFont}>Select a Car</option>
             {
               cars.map((car) => (
