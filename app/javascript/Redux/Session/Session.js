@@ -17,7 +17,7 @@ export const logOut = (payload) => ({
   payload,
 });
 
-export const fetchCreateUser = (username) => async (dispatch) => {
+export const fetchCreateUser = (username, setSignup) => async (dispatch) => {
   await fetch('http://127.0.0.1:3000/api/v1/new-user', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -28,12 +28,15 @@ export const fetchCreateUser = (username) => async (dispatch) => {
   }).then((response) => response.json())
     .then((data) => {
       if (data.code === 200) {
+        setSignup(false);
         dispatch(newSession(data));
       }
+    }).catch(() => {
+      setSignup(false);
     });
 };
 
-export const loginUser = (username) => async (dispatch) => {
+export const loginUser = (username, setLoggin) => async (dispatch) => {
   await fetch('http://127.0.0.1:3000/api/v1/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -44,8 +47,11 @@ export const loginUser = (username) => async (dispatch) => {
   }).then((response) => response.json())
     .then((data) => {
       if (data.code === 200) {
+        setLoggin(false);
         dispatch(newSession(data));
       }
+    }).catch(() => {
+      setLoggin(false);
     });
 };
 

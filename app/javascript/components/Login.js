@@ -4,29 +4,34 @@ import { bindActionCreators } from 'redux';
 import { Form, Button } from 'react-bootstrap';
 import { loginUser } from '../Redux/Session/Session';
 import logo from '../Img/logo.jpg';
-import styles from './Login.module.css'
+import styles from './Login.module.css';
+import Loading from './Loading';
 
 const Login = () => {
   const [userInp, setUserInp] = useState('');
   const dispatch = useDispatch();
   const loginUserAction = bindActionCreators(loginUser, dispatch);
+  const [ loggin, setLoggin ] = useState(false);
 
   const UpdateUserInp = (value) => {
     setUserInp(value);
   };
 
   const loginUserBtnHandler = () => {
-    loginUserAction(userInp);
+    setLoggin(true);
+    loginUserAction(userInp, setLoggin);
   };
 
   const inputEnterSubmit = (e) => {
     if (e.key === 'Enter') {
-      loginUserAction(userInp);
+      setLoggin(true);
+      loginUserAction(userInp, setLoggin);
     }
   };
 
   return (
     <div className={styles.container}>
+      <Loading status={loggin} />
       <img src={logo} className={styles.img} alt="logo" />
       <Form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
         <Form.Label className={styles.logLabel}>Login:</Form.Label>
