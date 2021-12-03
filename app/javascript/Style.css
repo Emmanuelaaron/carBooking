@@ -13,6 +13,14 @@ html {
 body {
   height: 100vh;
   margin: 0;
+  background-image: linear-gradient(#8db300ed, #8db300ed), url("https://media.istockphoto.com/photos/illustration-of-generic-sports-coupe-car-on-white-picture-id1003904064?k=20&m=1003904064&s=612x612&w=0&h=qjMmK0xlPn7GLOefECHBNI0VWccVlLK7xo8vuIBw5uM=");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.border-red {
+  border: 1px solid red;
 }
 
 ::-webkit-scrollbar {
@@ -35,9 +43,16 @@ body {
   overflow-x: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .page-container {
+  overflow: hidden;
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 .bg-session {
@@ -59,6 +74,7 @@ body {
   width: 100%;
   font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-right: 1px solid #97bf11;
+  background-color: #fff;
   z-index: 900;
 }
 
@@ -205,20 +221,6 @@ body {
   padding: 5px;
 }
 
-.slider-container {
-  height: auto;
-  display: inline-flex;
-  overflow: hidden;
-  scrollbar-width: none;
-}
-
-.slider {
-  height: auto;
-  display: inline-flex;
-  scrollbar-width: none;
-  min-width: 0;
-}
-
 .dotIndicator {
   background-color: rgb(128, 128, 128);
   width: 10px;
@@ -245,18 +247,10 @@ body {
     border: 0;
   }
 
-  .session-container {
-    width: 95%;
-    min-width: 0;
-  }
-
-  .slider {
-    width: 100vh;
-  }
-
   .page-container {
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
   }
 
   .nav-link {

@@ -10,9 +10,9 @@ const HomeBbuttons = (props) => {
   return (
     <>
       <button
-        className={`position-absolute top-50 end-0 translate-middle-y ${page >= (carsCount - 1) ? 'phone-rigth-disabled' : 'phone-rigth'}`}
+        className={`position-absolute top-50 end-0 translate-middle-y ${(page/100) >= (carsCount - 1) ? 'phone-rigth-disabled' : 'phone-rigth'}`}
         onClick={rigthfunction}
-        disabled={page >= (carsCount - 1)}
+        disabled={(page/100) >= (carsCount - 1)}
         type="button"
       >
         <img className="arrowicon-inverse" src={triangleArrowImg} alt="icon" />

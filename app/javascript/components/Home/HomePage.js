@@ -18,13 +18,17 @@ const HomePage = () => {
   }, []);
 
   return (
-    cars ?
-      <div className="m-0 p-0 position-relative container-fluid home-container">
-        <CarList cars={cars} setdiplayCar={setdiplayCar} />
-        <CarShownPage car={diplayCar.car} display={diplayCar.display} setdiplayCar={setdiplayCar} />
-      </div>
-    :
-      <Loading />
+    <div className="position-relative w-100 h-100 p-0 m-0 min-width-0 overflow-y-auto">
+      {
+        (cars.length > 0) ?
+          <div className="home-container">
+            <CarList cars={cars} setdiplayCar={setdiplayCar} />
+            <CarShownPage car={diplayCar.car} display={diplayCar.display} setdiplayCar={setdiplayCar} />
+          </div>
+        :
+          <Loading status={true} />
+      }
+    </div>
   );
 };
 

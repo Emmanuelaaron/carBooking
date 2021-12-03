@@ -8,12 +8,12 @@ const PageIndicator = (props) => {
     <>
       <div className="d-md-none d-flex flex-row justify-content-center align-items-center">
         {
-          cars.map((car, index) => (<span key={car.id} className={((smallViewPage === index) ? 'dotActive' : 'dotIndicator')} />))
+          cars.map((car, index) => (<span key={car.id} className={(((page / 100) === index) ? 'dotActive' : 'dotIndicator')} />))
         }
       </div>
       <div className="d-none d-md-flex flex-row justify-content-center align-items-center">
         {
-          cars.filter((val, index) => (index <= ((cars.length - 1) / 3))).map((car, index) => (<span key={car.id} className={((page === index) ? 'dotActive' : 'dotIndicator')} />))
+          cars.filter((val, index) => (index <= ((cars.length - 1) / 3))).map((car, index) => (<span key={car.id} className={(((page/300) === index) ? 'dotActive' : 'dotIndicator')} />))
         }
       </div>
     </>

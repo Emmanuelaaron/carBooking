@@ -21,7 +21,7 @@ const Session = () => {
   return (
     (currentSession.session ) ?
     <Router>
-        <div className="cotainer-fluid m-0 p-0 d-flex flex-column flex-md-row">
+        <div className="m-0 p-0 d-flex flex-column flex-md-row page-container">
           <Navbar />
           <Routes>
             <Route path="/reservation/:id" element={<ReservationForm />} />
@@ -33,8 +33,8 @@ const Session = () => {
         </div>
       </Router>
       :
-      <div className="bg-session m-0 position-relative p-0 border">
-        <div className="position-absolute top-50 start-50 translate-middle session-container">
+      <div className="bg-session m-0 position-relative p-0 page-container border-red">
+        <div className="position-absolute top-50 start-50 translate-middle">
           <div
             className="p-2 bg-dark-transparent text-white rounded-3 d-flex flex-column align-items-center"
           >
