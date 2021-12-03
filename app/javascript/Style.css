@@ -20,7 +20,7 @@ body {
 }
 
 .border-red {
-  border:1px solid red;
+  border: 1px solid red;
 }
 
 ::-webkit-scrollbar {
@@ -74,7 +74,7 @@ body {
   width: 100%;
   font-family: 'navbarLinks', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-right: 1px solid #97bf11;
-  background-color: #ffffff;
+  background-color: #fff;
   z-index: 900;
 }
 

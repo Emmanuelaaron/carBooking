@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,15 +15,15 @@
 }
 
 .md-car-container-a {
-  min-height: fit-content;
+  height: min-content;
 }
 
 .md-car-container-b {
-  min-height: fit-content;
+  height: min-content;
 }
 
 .min-height-fit-content {
-  min-height: fit-content;
+  height: min-content;
 }
 
 .min-width-0 {
@@ -50,7 +50,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #fff;
   }
 
   .car-show-page {
